@@ -1,20 +1,20 @@
-# QUT-Notes-Template - Unit name
+# EGB242 - Signal Analysis
 
-## Unit coordinator name
+## Prof Wageeh Boles
 
-### Semester #, 20xx
+### Semester 2, 2022
 
 ---
 
 ## Downloads
 
-Lecture notes download: [QUT-Notes-Template Lecture Notes PDF](https://www.github.com/Tarang74/QUT-Notes-Template/raw/main/QUT-Notes-Template%20Lecture%20Notes.pdf)
+Lecture notes download: [EGB242 Lecture Notes PDF](https://www.github.com/Tarang74/EGB242/raw/main/EGB242%20Lecture%20Notes.pdf)
 
-Exam notes download: [QUT-Notes-Template Exam Notes PDF](https://www.github.com/Tarang74/QUT-Notes-Template/raw/main/QUT-Notes-Template%20Exam%20Notes.pdf)
+Exam notes download: [EGB242 Exam Notes PDF](https://www.github.com/Tarang74/EGB242/raw/main/EGB242%20Exam%20Notes.pdf)
 
 ---
 
-This repository provides **lecture notes** and **exam notes** for **QUT-Notes-Template - Unit name**.
+This repository provides **lecture notes** and **exam notes** for **EGB242 - Signal Analysis**.
 
 *The contents of the lecture notes are described below.*
 
