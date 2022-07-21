@@ -22,10 +22,11 @@ This repository provides **lecture notes** and **exam notes** for **EGB242 - Sig
 
 ## Contents
 
-1. Section 1
+1. Properties of Mathematical Functions
+2. Fourier Series
 
 ---
 
-![Copyright](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)
+[![license](https://forthebadge.com/images/badges/cc-sa.svg)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 This work is licensed under a [Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
