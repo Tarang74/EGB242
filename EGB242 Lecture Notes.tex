@@ -117,19 +117,19 @@ as the integrand is an odd function.
 \subsection{Integrals of Trigonometric Functions}
 For \(n \in \Z\):
 \begin{align*}
-    \int_{t_0}^{t_0 + T} \sin{\left( 2n \pi f_0 t \right)} \odif{t} & = - \frac{1}{2n \pi f_0} \left[ \cos{\left( 2n \pi f_0 t \right)} \right]_{t_0}^{t_0 + T}                                                        \\
-                                                                    & = - \frac{1}{2n \pi f_0} \left[ \cos{\left( \frac{2n \pi}{T} \left( t_0 + T \right) \right)} - \cos{\left( \frac{2n \pi}{T} t_0 \right)} \right] \\
-                                                                    & = - \frac{1}{2n \pi f_0} \left[ \cos{\left( \frac{2n \pi}{T} t_0 + 2n \pi \right)} - \cos{\left( \frac{2n \pi}{T} t_0 \right)} \right]           \\
-                                                                    & = - \frac{1}{2n \pi f_0} \left[ \cos{\left( \frac{2n \pi}{T} t_0 \right)} - \cos{\left( \frac{2n \pi}{T} t_0 \right)} \right]                    \\
-                                                                    & = - \frac{1}{2n \pi f_0} \left[ 0 \right]                                                                                                        \\
+    \int_{t_0}^{t_0 + T} \sin{\left( 2\pi n f_0 t \right)} \odif{t} & = - \frac{1}{2\pi n f_0} \left[ \cos{\left( 2\pi n f_0 t \right)} \right]_{t_0}^{t_0 + T}                                                        \\
+                                                                    & = - \frac{1}{2\pi n f_0} \left[ \cos{\left( \frac{2\pi n}{T} \left( t_0 + T \right) \right)} - \cos{\left( \frac{2\pi n}{T} t_0 \right)} \right] \\
+                                                                    & = - \frac{1}{2\pi n f_0} \left[ \cos{\left( \frac{2\pi n}{T} t_0 + 2\pi n \right)} - \cos{\left( \frac{2\pi n}{T} t_0 \right)} \right]           \\
+                                                                    & = - \frac{1}{2\pi n f_0} \left[ \cos{\left( \frac{2\pi n}{T} t_0 \right)} - \cos{\left( \frac{2\pi n}{T} t_0 \right)} \right]                    \\
+                                                                    & = - \frac{1}{2\pi n f_0} \left[ 0 \right]                                                                                                        \\
                                                                     & = 0.
 \end{align*}
 \begin{align*}
-    \int_{t_0}^{t_0 + T} \cos{\left( 2n \pi f_0 t \right)} \odif{t} & = \frac{1}{2n \pi f_0} \left[ \sin{\left( 2n \pi f_0 t \right)} \right]_{t_0}^{t_0 + T}                                                        \\
-                                                                    & = \frac{1}{2n \pi f_0} \left[ \sin{\left( \frac{2n \pi}{T} \left( t_0 + T \right) \right)} - \sin{\left( \frac{2n \pi}{T} t_0 \right)} \right] \\
-                                                                    & = \frac{1}{2n \pi f_0} \left[ \sin{\left( \frac{2n \pi}{T} t_0 + 2n \pi \right)} - \sin{\left( \frac{2n \pi}{T} t_0 \right)} \right]           \\
-                                                                    & = \frac{1}{2n \pi f_0} \left[ \sin{\left( \frac{2n \pi}{T} t_0 \right)} - \sin{\left( \frac{2n \pi}{T} t_0 \right)} \right]                    \\
-                                                                    & = \frac{1}{2n \pi f_0} \left[ 0 \right]                                                                                                        \\
+    \int_{t_0}^{t_0 + T} \cos{\left( 2\pi n f_0 t \right)} \odif{t} & = \frac{1}{2\pi n f_0} \left[ \sin{\left( 2\pi n f_0 t \right)} \right]_{t_0}^{t_0 + T}                                                        \\
+                                                                    & = \frac{1}{2\pi n f_0} \left[ \sin{\left( \frac{2\pi n}{T} \left( t_0 + T \right) \right)} - \sin{\left( \frac{2\pi n}{T} t_0 \right)} \right] \\
+                                                                    & = \frac{1}{2\pi n f_0} \left[ \sin{\left( \frac{2\pi n}{T} t_0 + 2\pi n \right)} - \sin{\left( \frac{2\pi n}{T} t_0 \right)} \right]           \\
+                                                                    & = \frac{1}{2\pi n f_0} \left[ \sin{\left( \frac{2\pi n}{T} t_0 \right)} - \sin{\left( \frac{2\pi n}{T} t_0 \right)} \right]                    \\
+                                                                    & = \frac{1}{2\pi n f_0} \left[ 0 \right]                                                                                                        \\
                                                                     & = 0.
 \end{align*}
 \subsubsection{Product of Trigonometric Functions}
@@ -143,99 +143,93 @@ For \(n,\: m \in \N\),
 
 \underline{Product of two cosine functions:}
 \begin{equation*}
-    \int_{t_0}^{t_0 + T} \cos{\left( 2n \pi f_0 t \right)} \cos{\left( 2m \pi f_0 t \right)} \odif{t} = \frac{1}{2} \int_{t_0}^{t_0 + T} \cos{\left( 2 \left( n - m \right) \pi f_0 t \right)} + \cos{\left( 2 \left( n + m \right) \pi f_0 t \right)} \odif{t}
+    \int_{t_0}^{t_0 + T} \cos{\left( 2\pi n f_0 t \right)} \cos{\left( 2\pi m f_0 t \right)} \odif{t} = \frac{1}{2} \int_{t_0}^{t_0 + T} \cos{\left( 2 \pi \left( n - m \right) f_0 t \right)} + \cos{\left( 2 \pi \left( n + m \right) f_0 t \right)} \odif{t}
 \end{equation*}
 \(n = m \implies n - m = 0\) and \(\left( n + m \right) \in \Z\), so that the integral of the second
 term is \(0\), and the integral of the first term results in \(\frac{T}{2}\).
 
 \(n \neq m \implies \left( n - m \right),\: \left( n + m \right) \in \Z\) so that both terms evaluate to \(0\) when integrated separately.
 \begin{equation*}
-    \int_{t_0}^{t_0 + T} \cos{\left( 2n \pi f_0 t \right)} \cos{\left( 2m \pi f_0 t \right)} \odif{t} = \begin{cases}
+    \int_{t_0}^{t_0 + T} \cos{\left( 2\pi n f_0 t \right)} \cos{\left( 2\pi m f_0 t \right)} \odif{t} = \begin{cases}
         \frac{T}{2}, & n = m     \\
         0,           & n \neq m.
     \end{cases}
 \end{equation*}
 \underline{Product of two sine functions:}
 \begin{equation*}
-    \int_{t_0}^{t_0 + T} \sin{\left( 2n \pi f_0 t \right)} \sin{\left( 2m \pi f_0 t \right)} \odif{t} = \frac{1}{2} \int_{t_0}^{t_0 + T} \cos{\left( 2 \left( n - m \right) \pi f_0 t \right)} - \cos{\left( 2 \left( n + m \right) \pi f_0 t \right)} \odif{t}
+    \int_{t_0}^{t_0 + T} \sin{\left( 2\pi n f_0 t \right)} \sin{\left( 2\pi m f_0 t \right)} \odif{t} = \frac{1}{2} \int_{t_0}^{t_0 + T} \cos{\left( 2 \pi \left( n - m \right) f_0 t \right)} - \cos{\left( 2 \pi \left( n + m \right) f_0 t \right)} \odif{t}
 \end{equation*}
 By the same argument as before,
 \begin{equation*}
-    \int_{t_0}^{t_0 + T} \sin{\left( 2n \pi f_0 t \right)} \sin{\left( 2m \pi f_0 t \right)} \odif{t} = \begin{cases}
+    \int_{t_0}^{t_0 + T} \sin{\left( 2\pi n f_0 t \right)} \sin{\left( 2\pi m f_0 t \right)} \odif{t} = \begin{cases}
         \frac{T}{2}, & n = m     \\
         0,           & n \neq m.
     \end{cases}
 \end{equation*}
 \underline{Product of sine and cosine functions:}
 \begin{equation*}
-    \int_{t_0}^{t_0 + T} \sin{\left( 2n \pi f_0 t \right)} \cos{\left( 2m \pi f_0 t \right)} \odif{t} = \frac{1}{2} \int_{t_0}^{t_0 + T} \sin{\left( 2 \left( n - m \right) \pi f_0 t \right)} + \sin{\left( 2 \left( n + m \right) \pi f_0 t \right)} \odif{t}
+    \int_{t_0}^{t_0 + T} \sin{\left( 2\pi n f_0 t \right)} \cos{\left( 2\pi m f_0 t \right)} \odif{t} = \frac{1}{2} \int_{t_0}^{t_0 + T} \sin{\left( 2 \pi \left( n - m \right) f_0 t \right)} + \sin{\left( 2 \pi \left( n + m \right) f_0 t \right)} \odif{t}
 \end{equation*}
 \(n = m \implies n - m = 0\) and \(\left( n + m \right) \in \Z\), so that the integral reduces to \(0\).
 
 \(n \neq m \implies \left( n - m \right),\: \left( n + m \right) \in \Z\) so that both terms evaluate to \(0\) when integrated separately.
 \begin{equation*}
-    \int_{t_0}^{t_0 + T} \sin{\left( 2n \pi f_0 t \right)} \cos{\left( 2m \pi f_0 t \right)} \odif{t} = 0.
+    \int_{t_0}^{t_0 + T} \sin{\left( 2\pi n f_0 t \right)} \cos{\left( 2\pi m f_0 t \right)} \odif{t} = 0.
 \end{equation*}
 \section{Fourier Series}
 \subsection{Fourier Series Expansion}
 The \textbf{Fourier Series Expansion} of a function \(x\left( t \right)\) on the interval \(\interval{t_0}{t_0 + T}\)
 is given by
 \begin{equation*}
-    x_F\left( t \right) = a_0 + \sum_{n = 1}^\infty a_n \cos{\left( 2n \pi f_0 t \right)} + \sum_{n = 1}^\infty b_n \sin{\left( 2n \pi f_0 t \right)}
+    x_F\left( t \right) = a_0 + \sum_{n = 1}^\infty \left( a_n \cos{\left( 2\pi n f_0 t \right)} + b_n \sin{\left( 2\pi n f_0 t \right)} \right)
 \end{equation*}
 where \(n \in \Z^{+}\) and \(f_0 = \frac{1}{T}\). The coefficients are given by
 \begin{align*}
     a_0 & = \frac{1}{T} \int_{t_0}^{t_0 + T} x\left( t \right) \odif{t}                                   \\
-    a_n & = \frac{2}{T} \int_{t_0}^{t_0 + T} x\left( t \right) \cos{\left( 2n \pi f_0 t \right)} \odif{t} \\
-    b_n & = \frac{2}{T} \int_{t_0}^{t_0 + T} x\left( t \right) \sin{\left( 2n \pi f_0 t \right)} \odif{t}
+    a_n & = \frac{2}{T} \int_{t_0}^{t_0 + T} x\left( t \right) \cos{\left( 2\pi n f_0 t \right)} \odif{t} \\
+    b_n & = \frac{2}{T} \int_{t_0}^{t_0 + T} x\left( t \right) \sin{\left( 2\pi n f_0 t \right)} \odif{t}
 \end{align*}
 \begin{proof}
     Let \(m \in \N\).
 
     For the coefficient \(a_0\), integrate the function \(x\left( t \right)\) over the interval \(\interval{t_0}{t_0 + T}\).
     \begin{align*}
-        \int_{t_0}^{t_0 + T} x\left( t \right) \odif{t} & = \int_{t_0}^{t_0 + T} a_0 \odif{t} + \sum_{n = 1}^\infty a_n \int_{t_0}^{t_0 + T} \cos{\left( 2 n \pi f_0 t \right)} \odif{t} + \sum_{n = 1}^\infty b_n \int_{t_0}^{t_0 + T} \sin{\left( 2 n \pi f_0 t \right)} \odif{t} \\
-        \int_{t_0}^{t_0 + T} x\left( t \right) \odif{t} & = a_0 T                                                                                                                                                                                                                   \\
+        \int_{t_0}^{t_0 + T} x\left( t \right) \odif{t} & = \int_{t_0}^{t_0 + T} a_0 \odif{t} + \sum_{n = 1}^\infty a_n \cancelto{0}{\int_{t_0}^{t_0 + T} \cos{\left( 2 \pi n f_0 t \right)} \odif{t}} + \sum_{n = 1}^\infty b_n \cancelto{0}{\int_{t_0}^{t_0 + T} \sin{\left( 2 \pi n f_0 t \right)} \odif{t}} \\
+        \int_{t_0}^{t_0 + T} x\left( t \right) \odif{t} & = a_0 T                                                                                                                                                                                                                                               \\
         a_0                                             & = \frac{1}{T} \int_{t_0}^{t_0 + T} x\left( t \right) \odif{t}
     \end{align*}
     so that \(a_0\) represents the average value of \(x\) on \(\interval{t_0}{t_0 + T}\).
 
-    For coefficients \(a_m\), multiply the equation by \(\cos{\left( 2 m \pi f_0 t \right)}\) before integrating.
+    For coefficients \(a_m\), multiply the equation by \(\cos{\left( 2 \pi m f_0 t \right)}\) before integrating.
     \begin{align*}
-        x\left( t \right) \cos{\left( 2 m \pi f_0 t \right)}                               & = \begin{aligned}[t]
-                                                                                                    & a_0 \cos{\left( 2 m \pi f_0 t \right)}                                                          \\
-                                                                                                    & + \sum_{n = 1}^\infty a_n \cos{\left( 2 n \pi f_0 t \right)} \cos{\left( 2 m \pi f_0 t \right)} \\
-                                                                                                    & + \sum_{n = 1}^\infty b_n \sin{\left( 2 n \pi f_0 t \right)} \cos{\left( 2 m \pi f_0 t \right)}
+        x\left( t \right) \cos{\left( 2 \pi m f_0 t \right)}                               & = \begin{aligned}[t]
+                                                                                                    & a_0 \cos{\left( 2 \pi m f_0 t \right)}                                                          \\
+                                                                                                    & + \sum_{n = 1}^\infty a_n \cos{\left( 2 \pi n f_0 t \right)} \cos{\left( 2 \pi m f_0 t \right)} \\
+                                                                                                    & + \sum_{n = 1}^\infty b_n \sin{\left( 2 \pi n f_0 t \right)} \cos{\left( 2 \pi m f_0 t \right)}
                                                                                                \end{aligned}                                                    \\
-        \int_{t_0}^{t_0 + T} x\left( t \right) \cos{\left( 2 m \pi f_0 t \right)} \odif{t} & = \begin{aligned}[t]
-                                                                                                    & a_0 \cancelto{0}{\int_{t_0}^{t_0 + T} \cos{\left( 2 m \pi f_0 t \right)} \odif{t}}                                                          \\
-                                                                                                    & + \sum_{n = 1}^\infty a_n \int_{t_0}^{t_0 + T} \cos{\left( 2 n \pi f_0 t \right)} \cos{\left( 2 m \pi f_0 t \right)} \odif{t}               \\
-                                                                                                    & + \sum_{n = 1}^\infty b_n \cancelto{0}{\int_{t_0}^{t_0 + T} \sin{\left( 2 n \pi f_0 t \right)} \cos{\left( 2 m \pi f_0 t \right)} \odif{t}}
+        \int_{t_0}^{t_0 + T} x\left( t \right) \cos{\left( 2 \pi m f_0 t \right)} \odif{t} & = \begin{aligned}[t]
+                                                                                                    & a_0 \cancelto{0}{\int_{t_0}^{t_0 + T} \cos{\left( 2 \pi m f_0 t \right)} \odif{t}}                                                          \\
+                                                                                                    & + \sum_{n = 1}^\infty a_n \int_{t_0}^{t_0 + T} \cos{\left( 2 \pi n f_0 t \right)} \cos{\left( 2 \pi m f_0 t \right)} \odif{t}               \\
+                                                                                                    & + \sum_{n = 1}^\infty b_n \cancelto{0}{\int_{t_0}^{t_0 + T} \sin{\left( 2 \pi n f_0 t \right)} \cos{\left( 2 \pi m f_0 t \right)} \odif{t}}
                                                                                                \end{aligned} \\
-        \int_{t_0}^{t_0 + T} x\left( t \right) \cos{\left( 2 m \pi f_0 t \right)} \odif{t} & = a_m \frac{T}{2}                                                                                                                                       \\
-        a_m                                                                                & = \frac{2}{T} \int_{t_0}^{t_0 + T} x\left( t \right) \cos{\left( 2 m \pi f_0 t \right)} \odif{t}
+        \int_{t_0}^{t_0 + T} x\left( t \right) \cos{\left( 2 \pi m f_0 t \right)} \odif{t} & = a_m \frac{T}{2}                                                                                                                                       \\
+        a_m                                                                                & = \frac{2}{T} \int_{t_0}^{t_0 + T} x\left( t \right) \cos{\left( 2 \pi m f_0 t \right)} \odif{t}
     \end{align*}
 
-    For coefficients \(b_m\), multiply the equation by \(\sin{\left( 2 m \pi f_0 t \right)}\) before integrating.
+    For coefficients \(b_m\), multiply the equation by \(\sin{\left( 2 \pi m f_0 t \right)}\) before integrating.
     \begin{align*}
-        x\left( t \right) \sin{\left( 2 m \pi f_0 t \right)}                               & = \begin{aligned}[t]
-                                                                                                    & a_0 \sin{\left( 2 m \pi f_0 t \right)}                                                          \\
-                                                                                                    & + \sum_{n = 1}^\infty a_n \cos{\left( 2 n \pi f_0 t \right)} \sin{\left( 2 m \pi f_0 t \right)} \\
-                                                                                                    & + \sum_{n = 1}^\infty b_n \sin{\left( 2 n \pi f_0 t \right)} \sin{\left( 2 m \pi f_0 t \right)}
+        x\left( t \right) \sin{\left( 2 \pi m f_0 t \right)}                               & = \begin{aligned}[t]
+                                                                                                    & a_0 \sin{\left( 2 \pi m f_0 t \right)}                                                          \\
+                                                                                                    & + \sum_{n = 1}^\infty a_n \cos{\left( 2 \pi n f_0 t \right)} \sin{\left( 2 \pi m f_0 t \right)} \\
+                                                                                                    & + \sum_{n = 1}^\infty b_n \sin{\left( 2 \pi n f_0 t \right)} \sin{\left( 2 \pi m f_0 t \right)}
                                                                                                \end{aligned}                                                    \\
-        \int_{t_0}^{t_0 + T} x\left( t \right) \sin{\left( 2 m \pi f_0 t \right)} \odif{t} & = \begin{aligned}[t]
-                                                                                                    & a_0 \cancelto{0}{\int_{t_0}^{t_0 + T} \sin{\left( 2 m \pi f_0 t \right)} \odif{t}}                                                          \\
-                                                                                                    & + \sum_{n = 1}^\infty a_n \cancelto{0}{\int_{t_0}^{t_0 + T} \cos{\left( 2 n \pi f_0 t \right)} \sin{\left( 2 m \pi f_0 t \right)} \odif{t}} \\
-                                                                                                    & + \sum_{n = 1}^\infty b_n \int_{t_0}^{t_0 + T} \sin{\left( 2 n \pi f_0 t \right)} \sin{\left( 2 m \pi f_0 t \right)} \odif{t}
+        \int_{t_0}^{t_0 + T} x\left( t \right) \sin{\left( 2 \pi m f_0 t \right)} \odif{t} & = \begin{aligned}[t]
+                                                                                                    & a_0 \cancelto{0}{\int_{t_0}^{t_0 + T} \sin{\left( 2 \pi m f_0 t \right)} \odif{t}}                                                          \\
+                                                                                                    & + \sum_{n = 1}^\infty a_n \cancelto{0}{\int_{t_0}^{t_0 + T} \cos{\left( 2 \pi n f_0 t \right)} \sin{\left( 2 \pi m f_0 t \right)} \odif{t}} \\
+                                                                                                    & + \sum_{n = 1}^\infty b_n \int_{t_0}^{t_0 + T} \sin{\left( 2 \pi n f_0 t \right)} \sin{\left( 2 \pi m f_0 t \right)} \odif{t}
                                                                                                \end{aligned} \\
-        \int_{t_0}^{t_0 + T} x\left( t \right) \sin{\left( 2 m \pi f_0 t \right)} \odif{t} & = b_m \frac{T}{2}                                                                                                                                       \\
-        b_m                                                                                & = \frac{2}{T} \int_{t_0}^{t_0 + T} x\left( t \right) \sin{\left( 2 m \pi f_0 t \right)} \odif{t}
-    \end{align*}
-    To summarise,
-    \begin{align*}
-        a_0 & = \frac{1}{T} \int_{t_0}^{t_0 + T} x\left( t \right) \odif{t}                                    \\
-        a_n & = \frac{2}{T} \int_{t_0}^{t_0 + T} x\left( t \right) \cos{\left( 2 n \pi f_0 t \right)} \odif{t} \\
-        b_n & = \frac{2}{T} \int_{t_0}^{t_0 + T} x\left( t \right) \sin{\left( 2 n \pi f_0 t \right)} \odif{t}
+        \int_{t_0}^{t_0 + T} x\left( t \right) \sin{\left( 2 \pi m f_0 t \right)} \odif{t} & = b_m \frac{T}{2}                                                                                                                                       \\
+        b_m                                                                                & = \frac{2}{T} \int_{t_0}^{t_0 + T} x\left( t \right) \sin{\left( 2 \pi m f_0 t \right)} \odif{t}
     \end{align*}
 \end{proof}
 \subsubsection{Convergence of a Fourier Series}
@@ -252,29 +246,89 @@ corresponding to jump discontinuities in the periodic extension of \(x\).
 Consider the Fourier series expansion of an even function \(x\) on the interval \(\interval{-\frac{T}{2}}{\frac{T}{2}}\), i.e., \(t_0 = -\frac{T}{2}\).
 In this case,
 \begin{equation*}
-    b_n = \frac{2}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} x\left( t \right) \sin{\left( 2n \pi f_0 t \right)} \odif{t} = 0
+    b_n = \frac{2}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} x\left( t \right) \sin{\left( 2\pi n f_0 t \right)} \odif{t} = 0
 \end{equation*}
 and the Fourier series is a ``Fourier cosine series'', given by:
 \begin{equation*}
-    x_C\left( t \right) = a_0 + \sum_{n = 1}^\infty a_n \cos{\left( 2n \pi f_0 t \right)}
+    x_c\left( t \right) = a_0 + \sum_{n = 1}^\infty a_n \cos{\left( 2\pi n f_0 t \right)}
 \end{equation*}
 with coefficients
 \begin{align*}
     a_0 & = \frac{1}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} x\left( t \right) \odif{t}                                    = \frac{2}{T} \int_0^{\frac{T}{2}} x\left( t \right) \odif{t}                                    \\
-    a_n & = \frac{2}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} x\left( t \right) \cos{\left( 2 n \pi f_0 t \right)} \odif{t} = \frac{4}{T} \int_0^{\frac{T}{2}} x\left( t \right) \cos{\left( 2n \pi f_0 t \right)} \odif{t}.
+    a_n & = \frac{2}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} x\left( t \right) \cos{\left( 2 \pi n f_0 t \right)} \odif{t} = \frac{4}{T} \int_0^{\frac{T}{2}} x\left( t \right) \cos{\left( 2\pi n f_0 t \right)} \odif{t}.
 \end{align*}
 \subsection{Fourier Sine Series}
 Consider the Fourier series expansion of an odd function \(x\) on the interval \(\interval{-\frac{T}{2}}{\frac{T}{2}}\).
 In this case
 \begin{equation*}
-    b_n = \frac{2}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} x\left( t \right) \sin{\left( 2n \pi f_0 t \right)} \odif{t} = 0
+    b_n = \frac{2}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} x\left( t \right) \sin{\left( 2\pi n f_0 t \right)} \odif{t} = 0
 \end{equation*}
 and the Fourier series is a ``Fourier sine series'', given by:
 \begin{equation*}
-    x_S\left( t \right) = \sum_{n = 1}^\infty b_n \sin{\left( 2n \pi f_0 t \right)}
+    x_s\left( t \right) = \sum_{n = 1}^\infty b_n \sin{\left( 2\pi n f_0 t \right)}
 \end{equation*}
 with coefficients
 \begin{equation*}
-    b_n = \frac{2}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} x\left( t \right) \sin{\left( 2 n \pi f_0 t \right)} \odif{t} = \frac{4}{T} \int_0^{\frac{T}{2}} x\left( t \right) \sin{\left( 2n \pi f_0 t \right)} \odif{t}.
+    b_n = \frac{2}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} x\left( t \right) \sin{\left( 2 \pi n f_0 t \right)} \odif{t} = \frac{4}{T} \int_0^{\frac{T}{2}} x\left( t \right) \sin{\left( 2\pi n f_0 t \right)} \odif{t}.
 \end{equation*}
+\section{Complex Fourier Series}
+\begin{definition}
+    The \textbf{Complex Fourier Series Expansion} is a concise form of the Fourier series expansion that uses complex exponentials with a single unknown coefficient.
+    \begin{equation*}
+        x_C\left( t \right) = \sum_{n = -\infty}^\infty c_n e^{-j 2\pi n f_0 t}
+    \end{equation*}
+    where
+    \begin{equation*}
+        c_n = \frac{1}{T} \int_{t_0}^{t_0 + T} x\left( t \right) e^{-j 2\pi n f_0 t} \odif{t}.
+    \end{equation*}
+    for \(n \in \Z\) and \(f_0 = \frac{1}{T}\).
+\end{definition}
+To determine the complex Fourier series expansion consider the following identities:
+\begin{align*}
+    \cos{\left( \theta \right)} & = \frac{e^{j \theta} + e^{-j \theta}}{2}     \\
+    \sin{\left( \theta \right)} & = -j \frac{e^{j \theta} - e^{-j \theta}}{2}.
+\end{align*}
+By substituting these identities into the Fourier series expansion summand, we obtain:
+\begin{align*}
+    a_n \cos{\left( 2\pi n f_0 t \right)} + b_n \sin{\left( 2\pi n f_0 t \right)} & = a_n \frac{e^{j 2\pi n f_0 t} + e^{-j 2\pi n f_0 t}}{2} -j b_n \frac{e^{j 2\pi n f_0 t} - e^{-j 2\pi n f_0 t}}{2} \\
+                                                                                  & = \frac{a_n - j b_n}{2} e^{j 2\pi n f_0 t} + \frac{a_n + j b_n}{2} e^{-j 2\pi n f_0 t}
+\end{align*}
+Let \(c_n = \frac{a_n - j b_n}{2}\) and \(c_n^\ast = \frac{a_n + j b_n}{2}\) (we will see how this simplifies later).
+Using the definitions for \(a_n\) and \(b_n\):
+\begin{align*}
+    c_n & = \frac{1}{2} \left( a_n - j b_n \right)                                                                                                            \\
+        & = \frac{1}{T} \int_{t_0}^{t_0 + T} x\left( t \right) \left( \cos{\left( 2\pi n f_0 t \right)} -j \sin{\left( 2\pi n f_0 t \right)} \right) \odif{t} \\
+        & = \frac{1}{T} \int_{t_0}^{t_0 + T} x\left( t \right) e^{-j 2\pi n f_0 t} \odif{t}
+\end{align*}
+\begin{align*}
+    c_n^\ast & = \frac{1}{2} \left( a_n + j b_n \right)                                                                                                             \\
+             & = \frac{1}{T} \int_{t_0}^{t_0 + T} x\left( t \right) \left( \cos{\left( 2\pi n f_0 t \right)} + j \sin{\left( 2\pi n f_0 t \right)} \right) \odif{t} \\
+             & = \frac{1}{T} \int_{t_0}^{t_0 + T} x\left( t \right) e^{j 2\pi n f_0 t} \odif{t}                                                                     \\
+             & = c_{-n}
+\end{align*}
+Let \(c_0 = a_0\), so that
+\begin{align*}
+    x_C\left( t \right) & = a_0 + \sum_{n = 1}^\infty \left( a_n \cos{\left( 2\pi n f_0 t \right)} + b_n \sin{\left( 2\pi n f_0 t \right)} \right) \\
+                        & = c_0 + \sum_{n = 1}^\infty \left( c_n e^{j 2\pi n f_0 t} + c_{-n} e^{-j 2\pi n f_0 t} \right)                           \\
+                        & = c_0 + \sum_{n = 1}^\infty c_n e^{j 2\pi n f_0 t} + \sum_{n = 1}^\infty c_{-n} e^{-j 2\pi n f_0 t}                      \\
+                        & = c_0 + \sum_{n = 1}^\infty c_n e^{j 2\pi n f_0 t} + \sum_{n = -\infty}^{-1} c_{n} e^{j 2\pi n f_0 t}                    \\
+                        & = \sum_{n = -\infty}^\infty c_n e^{j 2\pi n f_0 t}.
+\end{align*}
+\subsection{Converting between Fourier Series Representations}
+Given the Trigonometric and Exponential Fourier Series Representations (FSR),
+we can develop a relationship between the coefficients \(a_n\), \(b_n\), and \(c_n\) by:
+\begin{align*}
+    a_0 & = c_0          \\
+    a_n & = c_n + c_{-n} \\
+    b_n & = j \left( c_0 - c_{-n} \right).
+\end{align*}
+\subsection{Magnitude and Phase Spectra}
+As \(c_n\) is a complex number, consider the polar representation of \(c_n\):
+\begin{equation*}
+    c_n = \abs*{c_n} e^{j \theta_n}
+\end{equation*}
+where \(\abs*{c_n}\) is the magnitude spectra and \(\theta_n\) is the phase spectra of \(x\left( t \right)\).
+
+The plot of \(\abs*{c_n}\) against \(n\) is called the ``magnitude spectrum'' and
+the plot of \(\theta_n\) against \(n\) is called the ``phase spectrum'' of \(x\left( t \right)\).
 \end{document}
