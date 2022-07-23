@@ -24,9 +24,10 @@ This repository provides **lecture notes** and **exam notes** for **EGB242 - Sig
 
 1. Properties of Mathematical Functions
 2. Fourier Series
+3. Complex Fourier Series
 
 ---
 
-[![license](https://forthebadge.com/images/badges/cc-sa.svg)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
+[![license](https://forthebadge.com/images/badges/cc-nc-sa.svg)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-This work is licensed under a [Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
+This work is licensed under a [Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
