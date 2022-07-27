@@ -275,7 +275,7 @@ with coefficients
 \begin{definition}
     The \textbf{Complex Fourier Series Expansion} is a concise form of the Fourier series expansion that uses complex exponentials with a single unknown coefficient.
     \begin{equation*}
-        x_C\left( t \right) = \sum_{n = -\infty}^\infty c_n e^{-j 2\pi n f_0 t}
+        x_C\left( t \right) = \sum_{n = -\infty}^\infty c_n e^{j 2\pi n f_0 t}
     \end{equation*}
     where
     \begin{equation*}
@@ -318,17 +318,107 @@ Let \(c_0 = a_0\), so that
 Given the Trigonometric and Exponential Fourier Series Representations (FSR),
 we can develop a relationship between the coefficients \(a_n\), \(b_n\), and \(c_n\) by:
 \begin{align*}
-    a_0 & = c_0          \\
-    a_n & = c_n + c_{-n} \\
-    b_n & = j \left( c_0 - c_{-n} \right).
+    a_0 & = c_0                            \\
+    a_n & = c_n + c_{-n}                   \\
+    b_n & = j \left( c_n - c_{-n} \right).
 \end{align*}
 \subsection{Magnitude and Phase Spectra}
 As \(c_n\) is a complex number, consider the polar representation of \(c_n\):
 \begin{equation*}
     c_n = \abs*{c_n} e^{j \theta_n}
 \end{equation*}
-where \(\abs*{c_n}\) is the magnitude spectra and \(\theta_n\) is the phase spectra of \(x\left( t \right)\).
+so that the \textbf{magnitude spectra} is given by \(\abs*{c_n}\) and the \textbf{phase spectra} is given by \(\theta_n\).
 
-The plot of \(\abs*{c_n}\) against \(n\) is called the ``magnitude spectrum'' and
+The plot of \(\abs*{c_n}\) against \(n\) is called the ``magnitude spectrum'' of \(x\left( t \right)\) and
 the plot of \(\theta_n\) against \(n\) is called the ``phase spectrum'' of \(x\left( t \right)\).
+\begin{theorem}[Spectra of a real signal]
+    Given any real function \(x\left( t \right)\), the magnitude spectrum is always an even function,
+    and the phase spectrum is always an odd function.
+\end{theorem}
+\begin{proof}
+    Given a real function \(x\left( t \right)\), the exponential Fourier series is given by,
+    \begin{equation*}
+        x_C\left( t \right) = \sum_{n = -\infty}^\infty c_n e^{j 2\pi n f_0 t}
+    \end{equation*}
+    this is equivalent to
+    \begin{equation*}
+        x_C\left( t \right) = \sum_{n = -\infty}^\infty c_{-n} e^{-j 2\pi n f_0 t}.
+    \end{equation*}
+    The conjugate of \(x_C\left( t \right)\) yields,
+    \begin{equation*}
+        \overline{x_C\left( t \right)} = \sum_{n = -\infty}^\infty \overline{c_{n}} e^{-j 2\pi m f_0 t}
+    \end{equation*}
+    As \(x\left( t \right) \in \R\), \(x_C\left( t \right) = \overline{x_C\left( t \right)}\), so that
+    \begin{align*}
+        \sum_{n = -\infty}^\infty c_{-n} e^{-j 2\pi n f_0 t} & = \sum_{n = -\infty}^\infty \overline{c_{n}} e^{-j 2\pi m f_0 t} \\
+        c_{-n} e^{-j 2\pi n f_0 t}                           & = \overline{c_n} e^{-j 2\pi n f_0 t}                             \\
+        c_{-n}                                              & = \overline{c_n}
+    \end{align*}
+    Therefore by representing the coefficients above in polar form we get,
+    \begin{equation*}
+        \abs*{c_{-n}} e^{j \theta_{-n}} = \abs*{c_n} e^{-j \theta_n}
+    \end{equation*}
+    as required.
+\end{proof}
+\subsection{Even and Odd Functions}
+Given an even function \(x\left( t \right)\), \(b_n = 0\), therefore
+\begin{align*}
+    0   & = j \left( c_n - c_{-n} \right) \\
+    c_n & = c_{-n}
+\end{align*}
+so that,
+\begin{align*}
+    a_n & = c_n + c_{-n}           \\
+    a_n & = 2 c_n                  \\
+    c_n & = c_{-n} = \frac{a_n}{2}
+\end{align*}
+Hence \(c_n\) and \(c_{-n}\) are real coefficients, so that \(\abs{c_n}\) is an even function, and \(\theta_n = m \pi\) for some \(m \in \Z\).
+
+Given an odd function \(x\left( t \right)\), \(a_0 = 0\) and \(a_n = 0\), therefore \(c_0 = 0\) and
+\begin{align*}
+    0   & = c_n + c_{-n} \\
+    c_n & = -c_{-n}
+\end{align*}
+so that,
+\begin{align*}
+    b_n    & = j \left( c_n - c_{-n} \right) \\
+    b_n    & = j \left( c_n + c_n \right)    \\
+    b_n    & = j 2 c_n                       \\
+    c_n    & = -j \frac{b_n}{2}              \\
+    c_{-n} & = j \frac{b_n}{2}
+\end{align*}
+Hence \(c_n\) and \(c_{-n}\) are purely imaginary coefficients, so that \(\abs{c_n}\) is an odd function, and \(\theta_n = \left( 2m + 1 \right) \frac{\pi}{2}\) for some \(m \in \Z\).
+\subsection{Signal Representations}
+A signal can be represented in various forms depending on the method of measurement. There are three main forms of signal representation:
+\begin{itemize}
+    \item Analogue: Continuous in time and continuous in amplitude.
+    \item Discrete: Discrete in time and continuous in amplitude.
+    \item Digital: Discrete in time and discrete in amplitude.
+\end{itemize}
+The process of taking discrete time measurements is known as sampling, and taking discrete amplitude measurements is known as quantisation.
+\subsection{Dirac Delta Function}
+The Dirac Delta function (or impulse function) is defined by the following characteristics:
+\begin{align*}
+    \delta\left( t \right)                                & = \begin{cases}
+                                                                  0,      & t \neq 0 \\
+                                                                  \infty, & t = 0
+                                                              \end{cases} \\
+    \int_{-\infty}^\infty \delta\left( t \right) \odif{t} & = 1.
+\end{align*}
+Likewise, the shifted impulse function can be defined as:
+\begin{align*}
+    \delta\left( t - t_0 \right)                                & = \begin{cases}
+                                                                        0,      & t_0 \neq 0 \\
+                                                                        \infty, & t_0 = 0
+                                                                    \end{cases} \\
+    \int_{-\infty}^\infty \delta\left( t - t_0 \right) \odif{t} & = 1.
+\end{align*}
+Therefore we can infer the following \textit{shifting properties}:
+\begin{equation*}
+    \int_{-\infty}^\infty f\left( t \right) \delta\left( t - t_0 \right) \odif{t} = f\left( t_0 \right)
+\end{equation*}
+and 
+\begin{equation*}
+    f\left( t \right) \delta\left( t - t_0 \right) = f\left( t_0 \right) \delta\left( t - t_0 \right).
+\end{equation*}
 \end{document}
