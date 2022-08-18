@@ -198,7 +198,8 @@ where \(n \in \Z^{+}\) and \(f_0 = \frac{1}{T}\). The coefficients are given by
         \int_{t_0}^{t_0 + T} x\left( t \right) \odif{t} & = a_0 T                                                                                                                                                                                                                                               \\
         a_0                                             & = \frac{1}{T} \int_{t_0}^{t_0 + T} x\left( t \right) \odif{t}
     \end{align*}
-    so that \(a_0\) represents the average value of \(x\) on \(\interval{t_0}{t_0 + T}\).
+    so that \(a_0\) represents the average value of \(x\) on \(\interval{t_0}{t_0 + T}\). This coefficient also
+    represents the DC component of a signal.
 
     For coefficients \(a_m\), multiply the equation by \(\cos{\left( 2 \pi m f_0 t \right)}\) before integrating.
     \begin{align*}
@@ -315,7 +316,7 @@ Let \(c_0 = a_0\), so that
                         & = \sum_{n = -\infty}^\infty c_n e^{j 2\pi n f_0 t}.
 \end{align*}
 \subsection{Converting between Fourier Series Representations}
-Given the Trigonometric and Exponential Fourier Series Representations (FSR),
+Given the Trigonometric and Exponential (Complex) Fourier Series Representations (FSR),
 we can develop a relationship between the coefficients \(a_n\), \(b_n\), and \(c_n\) by:
 \begin{align*}
     a_0 & = c_0                            \\
@@ -352,7 +353,7 @@ the plot of \(\theta_n\) against \(n\) is called the ``phase spectrum'' of \(x\l
     \begin{align*}
         \sum_{n = -\infty}^\infty c_{-n} e^{-j 2\pi n f_0 t} & = \sum_{n = -\infty}^\infty \overline{c_{n}} e^{-j 2\pi m f_0 t} \\
         c_{-n} e^{-j 2\pi n f_0 t}                           & = \overline{c_n} e^{-j 2\pi n f_0 t}                             \\
-        c_{-n}                                              & = \overline{c_n}
+        c_{-n}                                               & = \overline{c_n}
     \end{align*}
     Therefore by representing the coefficients above in polar form we get,
     \begin{equation*}
@@ -396,8 +397,224 @@ A signal can be represented in various forms depending on the method of measurem
     \item Digital: Discrete in time and discrete in amplitude.
 \end{itemize}
 The process of taking discrete time measurements is known as sampling, and taking discrete amplitude measurements is known as quantisation.
+\begin{definition}[Integral transform]
+    An \textit{integral transform} transforms a function through the process of integration, producing a new function of another variable.
+    Two common examples of integral transforms are the Fourier transform and the Laplace transform.
+\end{definition}
+\section{Fourier Transform}
+The Fourier Transform allows us to extend the techniques used in Fourier series representations of functions
+to non-periodic signals.
+\begin{definition}[Fourier transform]
+    The Fourier transform of a function \(x\left( t \right)\) is defined by:
+    \begin{equation*}
+        \mathscr{F}\left\{ x\left( t \right) \right\} = X\left( f \right) = \int_{-\infty}^\infty x\left( t \right) e^{-j 2\pi f t} \odif{t}.
+    \end{equation*}
+    where \(X\left( f \right) = \mathscr{F}\left\{ x\left( t \right) \right\}\) is a function of frequency \(f\).
+\end{definition}
+\begin{definition}[Inverse Fourier transform]
+    The inverse Fourier transform of a function \(X\left( f \right)\) is defined by:
+    \begin{equation*}
+        \mathscr{F}^{-1}\left\{ X\left( f \right) \right\} = x\left( t \right) = \int_{-\infty}^\infty X\left( f \right) e^{j 2\pi f t} \odif{f}.
+    \end{equation*}
+\end{definition}
+This integral transform is commonly represented as a ``Fourier pair'' using the following notation:
+\begin{equation*}
+    x\left( t \right) \overset{\mathscr{F}}{\longleftrightarrow} X\left( f \right).
+\end{equation*}
+We can derive this definition by considering the complex Fourier series representation of \(x\left( t \right)\)
+on the interval \(\interval{-\frac{T}{2}}{\frac{T}{2}}\):
+\begin{align*}
+    x\left( t \right) & = \sum_{n = -\infty}^\infty c_n e^{j 2\pi n f_0 t}                                                                                                          \\
+                      & = \sum_{n = -\infty}^\infty \left[ \frac{1}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} x\left( t \right) e^{-j 2\pi n f_0 t} \odif{t} \right] e^{j 2\pi n f_0 t}.
+\end{align*}
+If we let \(f_n = n f_0\), then \(\adif{f_n} = f_{n + 1} - f_n = \left( n + 1 \right)f_0 - n f_0 = f_0 = \frac{1}{T}\):
+\begin{equation*}
+    x\left( t \right) = \sum_{n = -\infty}^\infty \left[ \int_{-\frac{T}{2}}^{\frac{T}{2}} x\left( t \right) e^{-j 2\pi f_n t} \odif{t} \right] e^{j 2\pi f_n t} \adif{f_n}.
+\end{equation*}
+By recognition, this is a Riemann sum, so that by taking the limit \(T \to \infty\) we get:
+\begin{equation*}
+    x\left( t \right) = \int_{-\infty}^\infty \left[ \int_{-\infty}^\infty x\left( t \right) e^{-j 2\pi f t} \odif{t} \right] e^{j 2\pi f t} \odif{f}
+\end{equation*}
+where
+\begin{equation*}
+    X\left( f \right) = \int_{-\infty}^\infty x\left( t \right) e^{-j 2\pi f t} \odif{t}.
+\end{equation*}
+\begin{corollary}[Dirichlet conditions]
+    The Dirichlet conditions provide sufficient conditions for a real-valued function \(x\) to be
+    equal to its Fourier Transform \(X\), at each point where \(x\) is continuous.
+
+    The conditions are:
+    \begin{enumerate}
+        \item \(x\) has a finite number of maxima and minima over \(\interval{-L}{L}\).
+        \item \(x\) has a finite number of discontinuities, in each of which the derivative \(x'\) exists and does not change sign.
+        \item \(\int_{-\infty}^\infty \abs*{x\left( t \right)} \odif{t}\) exists.
+    \end{enumerate}
+\end{corollary}
+\subsection{Fourier Transform Properties}
+\subsubsection{Linearity}
+\begin{equation*}
+    a_1 x_1\left( t \right) \pm a_2 x_2\left( t \right) \overset{\mathscr{F}}{\longleftrightarrow} a_1 X_1\left( f \right) \pm a_2 X_2\left( f \right).
+\end{equation*}
+Due to the linearity of the integral, the Fourier transform is a linear operator.
+\subsubsection{Complex Conjugate}
+\begin{equation*}
+    x^\ast\left( t \right) \overset{\mathscr{F}}{\longleftrightarrow} X^\ast\left( -f \right).
+\end{equation*}
+\begin{proof}
+    \begin{align*}
+        \mathscr{F}\left\{ x^\ast\left( t \right) \right\} & = \int_{-\infty}^\infty x^\ast\left( t \right) e^{-j 2\pi f t} \odif{t}                       \\
+                                                           & = \int_{-\infty}^\infty x^\ast\left( t \right) \overline{e^{j 2\pi f t}} \odif{t}^\ast        \\
+                                                           & = \int_{-\infty}^\infty \overline{x\left( t \right) e^{j 2\pi f t} \odif{t}}                  \\
+                                                           & = \overline{\int_{-\infty}^\infty x\left( t \right) e^{j 2\pi f t} \odif{t}}                  \\
+                                                           & = \overline{\int_{-\infty}^\infty x\left( t \right) e^{-j 2\pi \left( -f \right) t} \odif{t}} \\
+                                                           & = X^\ast\left( -f \right).
+    \end{align*}
+\end{proof}
+\subsubsection{Time Shift}
+\begin{equation*}
+    x\left( t - t_0 \right) \overset{\mathscr{F}}{\longleftrightarrow} e^{-j 2\pi f t_0} X\left( f \right).
+\end{equation*}
+\begin{proof}
+    \begin{align*}
+        x\left( t - t_0 \right) & = \int_{-\infty}^\infty X\left( f \right) e^{j 2\pi f \left( t - t_0 \right)} \odif{f}              \\
+                                & = \int_{-\infty}^\infty \left[ e^{-j 2\pi f t_0} X\left( f \right) \right] e^{-j 2\pi f t} \odif{f} \\
+                                & = \mathscr{F}^{-1}{\left( e^{-j 2\pi f t_0} X\left( f \right) \right)}.
+    \end{align*}
+\end{proof}
+\subsection{Frequency Shift}
+\begin{equation*}
+    e^{j 2\pi f_0 t} x\left( t \right) \overset{\mathscr{F}}{\longleftrightarrow} X\left( f - f_0 \right).
+\end{equation*}
+\begin{proof}
+    \begin{align*}
+        X\left( f - f_0 \right) & = \int_{-\infty}^\infty x\left( t \right) e^{-j 2\pi \left( f - f_0 \right) t} \odif{t}            \\
+                                & = \int_{-\infty}^\infty \left[ e^{j 2\pi f_0 t} x\left( t \right) \right] e^{-j 2\pi f t} \odif{t} \\
+                                & = \mathscr{F}\left\{ e^{j 2\pi f_0 t} x\left( t \right) \right\}
+    \end{align*}
+\end{proof}
+\subsection{Time Reversal}
+\begin{equation*}
+    x\left( -t \right) \overset{\mathscr{F}}{\longleftrightarrow} X\left( -f \right).
+\end{equation*}
+\begin{proof}
+    Consider the substitution \(u = -t\) so that \(\odif{u} = -\odif{t}\):
+    \begin{align*}
+        \mathscr{F}\left\{ x\left( -t \right) \right\} & = \int_{-\infty}^\infty x\left( -t \right) e^{-j 2\pi f t} \odif{t}                \\
+                                                       & = -\int_\infty^{-\infty} x\left( u \right) e^{j 2\pi f u} \odif{u}                 \\
+                                                       & = \int_{-\infty}^\infty x\left( u \right) e^{-j 2\pi \left( -f \right) u} \odif{u} \\
+                                                       & = X\left( -f \right)
+    \end{align*}
+\end{proof}
+\subsection{Time Scaling}
+\begin{equation*}
+    x\left( at \right) \overset{\mathscr{F}}{\longleftrightarrow} \frac{1}{\abs*{a}} X\left( \frac{f}{a} \right).
+\end{equation*}
+\begin{proof}
+    Consider the substitution \(u = at\) so that \(\odif{u} = a \odif{t}\):
+    \begin{align*}
+        \mathscr{F}\left\{ x\left( at \right) \right\} & = \int_{-\infty}^\infty x\left( at \right) e^{-j 2\pi f t} \odif{t}                      \\
+                                                       & = \int_{-\infty}^\infty x\left( u \right) e^{-j 2\pi f \frac{u}{a}} \frac{1}{a} \odif{u} \\
+                                                       & = \frac{1}{a} \int_{-\infty}^\infty x\left( u \right) e^{-j 2\pi \frac{f}{a} u} \odif{u} \\
+                                                       & = \frac{1}{a} X\left( \frac{f}{a} \right)
+    \end{align*}
+    when \(a > 0\), \(a = \abs*{a}\):
+    \begin{equation*}
+        \mathscr{F}\left\{ x\left( at \right) \right\} = \frac{1}{\abs*{a}} X\left( \frac{f}{a} \right).
+    \end{equation*}
+    When \(a < 0\), \(a = -\abs*{a}\):
+    \begin{align*}
+        \mathscr{F}\left\{ x\left( -\abs*{a} t \right) \right\} & = \frac{1}{\abs*{a}} X\left( -\frac{f}{\abs*{a}} \right) \\
+                                                                & = \frac{1}{\abs*{a}} X\left( \frac{f}{a} \right).
+    \end{align*}
+\end{proof}
+\subsection{Time Differentiation}
+\begin{equation*}
+    \odv[order=n]{x\left( t \right)}{t} \overset{\mathscr{F}}{\longleftrightarrow} \left( j 2\pi f \right)^n X\left( f \right).
+\end{equation*}
+\begin{proof}
+    Consider the representation of \(\odv{x\left( t \right)}{t}\) using the inverse Fourier transform:
+    \begin{align*}
+        \odv{x\left( t \right)}{t} & = \odv*{\int_{-\infty}^\infty X\left( f \right) e^{j 2\pi f t}\odif{f}}{t} \\
+                                   & = \int_{-\infty}^\infty X\left( f \right) \odv*{e^{j 2\pi f t}}{t}\odif{f} \\
+                                   & = j 2\pi f \int_{-\infty}^\infty X\left( f \right) e^{j 2\pi f t}\odif{f}  \\
+                                   & = j 2\pi f x\left( t \right)
+    \end{align*}
+    then the Fourier transform of \(\odv{x\left( t \right)}{t}\) is given by:
+    \begin{align*}
+        \mathscr{F}\left\{ \odv{x\left( t \right)}{t} \right\} & = \mathscr{F}\left\{ j 2\pi f x\left( t \right) \right\} \\
+                                                               & = j 2\pi f X\left( f \right)
+    \end{align*}
+    Repeated differentiation yields the following result:
+    \begin{equation*}
+        \mathscr{F}\left\{ \odv[order=n]{x\left( t \right)}{t} \right\} = \left( j 2\pi f \right)^n X\left( f \right)
+    \end{equation*}
+\end{proof}
+\subsection{Frequency Differentiation}
+\begin{equation*}
+    \left( \frac{2\pi}{j} \right)^n t^n x\left( t \right) \overset{\mathscr{F}}{\longleftrightarrow} \odv[order=n]{X\left( f \right)}{f}.
+\end{equation*}
+\begin{proof}
+    Consider the representation of \(\odv{X\left( f \right)}{f}\) using the Fourier transform:
+    \begin{align*}
+        \odv{X\left( f \right)}{f} & = \odv*{\int_{-\infty}^\infty x\left( t \right) e^{-j 2\pi f t}\odif{t}}{f} \\
+                                   & = \int_{-\infty}^\infty x\left( t \right) \odv*{e^{-j 2\pi f t}}{f}\odif{t} \\
+                                   & = -j 2\pi t \int_{-\infty}^\infty x\left( t \right) e^{-j 2\pi f t}\odif{t} \\
+                                   & = -j 2\pi t X\left( f \right)
+    \end{align*}
+    then the inverse Fourier transform of \(\odv{X\left( f \right)}{f}\) is given by:
+    \begin{align*}
+        \mathscr{F}^{-1}\left\{ \odv{X\left( f \right)}{f} \right\} & = \mathscr{F}^{-1}\left\{ -j 2\pi t X\left( f \right) \right\} \\
+                                                                    & = -j 2\pi t \mathscr{F}^{-1}\left\{ X\left( f \right) \right\} \\
+                                                                    & = \frac{2\pi}{j} t x\left( t \right)
+    \end{align*}
+    hence
+    \begin{equation*}
+        \frac{2\pi}{j} t x\left( t \right) \overset{\mathscr{F}}{\longleftrightarrow} \odv{X\left( f \right)}{f}.
+    \end{equation*}
+    Repeated differentiation yields the required result.
+\end{proof}
+\subsubsection{Time Multiplication}
+\begin{equation*}
+    t^n x\left( t \right) \overset{\mathscr{F}}{\longleftrightarrow} \left( \frac{j}{2\pi} \right)^n \odv[order=n]{X\left( f \right)}{f}.
+\end{equation*}
+\textit{See the previous section for the proof.}
+\subsubsection{Time Integration}
+\begin{equation*}
+    \int_{-\infty}^t x\left( \tau \right) \odif{\tau} \overset{\mathscr{F}}{\longleftrightarrow} \frac{1}{j 2\pi f} X\left( f \right).
+\end{equation*}
+\begin{proof}
+    Consider the representation of \(\int_{-\infty}^t x\left( \tau \right) \odif{\tau}\) using the inverse Fourier transform:
+    \begin{align*}
+        x\left( t \right)                                 & = \int_{-\infty}^\infty X\left( f \right) e^{j 2\pi f t} \odif{f}                                                  \\
+        \int_{-\infty}^t x\left( \tau \right) \odif{\tau} & = \int_{-\infty}^t \left[ \int_{-\infty}^\infty X\left( f \right) e^{j 2\pi f \tau} \odif{f} \right] \odif{\tau}   \\
+                                                          & = \int_{-\infty}^\infty X\left( f \right) \left[ \int_{-\infty}^t e^{j 2\pi f \tau} \odif{\tau} \right] \odif{f}   \\
+                                                          & = \int_{-\infty}^\infty X\left( f \right) \left[ \frac{1}{j 2\pi f} e^{j 2\pi f \tau} \right]_{-\infty}^t \odif{f} \\
+                                                          & = \frac{1}{j 2\pi f} \int_{-\infty}^\infty X\left( f \right) \left[ e^{j 2\pi f \tau} \right]_{-\infty}^t \odif{f} \\
+                                                          & = \frac{1}{j 2\pi f} \int_{-\infty}^\infty X\left( f \right) e^{j 2\pi f t} \odif{f}                               \\
+                                                          & = \frac{1}{j 2\pi f} x\left( t \right).
+    \end{align*}
+    We can now take the Fourier transform of \(\int_{-\infty}^t x\left( \tau \right) \odif{\tau}\) to obtain:
+    \begin{align*}
+        \mathscr{F}\left\{ \int_{-\infty}^t x\left( \tau \right) \odif{\tau} \right\} & = \mathscr{F}\left\{ \frac{1}{j 2\pi f} x\left( t \right) \right\} \\
+                                                                                      & = \frac{1}{j 2\pi f} \mathscr{F}\left\{ x\left( t \right) \right\} \\
+                                                                                      & = \frac{1}{j 2\pi f} X\left( f \right).
+    \end{align*}
+\end{proof}
+To summarise:
+\begin{align*}
+    x\left( t \right)                                 & \overset{\mathscr{F}}{\leftrightarrow} X\left( f \right)                                                                                            \\
+    x^\ast\left( t \right)                            & \overset{\mathscr{F}}{\longleftrightarrow} X^\ast\left( -f \right)                                                  &  & \text{(complex-conjugate)} \\
+    x\left( t - t_0 \right)                           & \overset{\mathscr{F}}{\leftrightarrow} e^{-j 2\pi n f t_0} X\left( f \right)                                        &  & \text{(time-shift)}        \\
+    e^{j 2\pi n f_0 t} x\left( t \right)              & \overset{\mathscr{F}}{\leftrightarrow} X\left( f - f_0 \right)                                                      &  & \text{(frequency-shift)}   \\
+    x\left( -t \right)                                & \overset{\mathscr{F}}{\leftrightarrow} X\left( -f \right)                                                           &  & \text{(time reversing)}    \\
+    x\left( at \right)                                & \overset{\mathscr{F}}{\leftrightarrow} \frac{1}{\abs*{a}} X\left( \frac{f}{a} \right)                               &  & \text{(time scaling)}      \\
+    t x\left( t \right)                               & \overset{\mathscr{F}}{\leftrightarrow} \frac{j}{2\pi} \odv{X\left( f \right)}{f}                                                                    \\
+    e^{at} u\left( t \right)                          & \overset{\mathscr{F}}{\leftrightarrow} \frac{1}{a + j 2\pi f}                                                                                       \\
+    x\left( t \right) \cos{\left( 2\pi f_0 t \right)} & \overset{\mathscr{F}}{\leftrightarrow} \frac{1}{2} \left[ X\left( f - f_0 \right) + X\left( f + f_0 \right) \right] &  & \text{(time modulation)}
+\end{align*}
+\section{Special Functions}
 \subsection{Dirac Delta Function}
-The Dirac Delta function (or impulse function) is defined by the following characteristics:
+The Dirac delta (or impulse) function is defined by the following characteristics:
 \begin{align*}
     \delta\left( t \right)                                & = \begin{cases}
                                                                   0,      & t \neq 0 \\
@@ -417,8 +634,41 @@ Therefore we can infer the following \textit{shifting properties}:
 \begin{equation*}
     \int_{-\infty}^\infty f\left( t \right) \delta\left( t - t_0 \right) \odif{t} = f\left( t_0 \right)
 \end{equation*}
-and 
+and
 \begin{equation*}
     f\left( t \right) \delta\left( t - t_0 \right) = f\left( t_0 \right) \delta\left( t - t_0 \right).
+\end{equation*}
+\subsection{Signum Function}
+The signum function is defined as:
+\begin{equation*}
+    \mathrm{sgn}\left( t \right) = \begin{cases}
+        1  & x > 0 \\
+        0  & x = 0 \\
+        -1 & x < 0
+    \end{cases}
+\end{equation*}
+\subsection{Unit Step Function}
+The unit step (or Heaviside) function is defined as:
+\begin{equation*}
+    u_s\left( t \right) = \begin{cases}
+        1 & t \geq 0 \\
+        0 & t < 0
+    \end{cases}
+\end{equation*}
+\subsection{Triangular Function}
+The triangular function is defined as:
+\begin{equation*}
+    \Lambda_T\left( t \right) = \begin{cases}
+        1 - \frac{\abs*{t}}{T} & \abs*{t} < T     \\
+        0                      & \text{otherwise}
+    \end{cases}
+\end{equation*}
+\subsection{Gate Function}
+The gate (or rectangle) function is defined as:
+\begin{equation*}
+    \mathrm{\Pi}_T\left( t \right) = \mathrm{rect}\left( \frac{t}{T} \right) = \begin{cases}
+        1 & -\frac{T}{2} \leq t \leq \frac{T}{2} \\
+        0 & \text{otherwise}
+    \end{cases}
 \end{equation*}
 \end{document}
