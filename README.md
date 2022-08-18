@@ -25,6 +25,8 @@ This repository provides **lecture notes** and **exam notes** for **EGB242 - Sig
 1. Properties of Mathematical Functions
 2. Fourier Series
 3. Complex Fourier Series
+4. Fourier Transform
+5. Special Functions
 
 ---
 
