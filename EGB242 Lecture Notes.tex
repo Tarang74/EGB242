@@ -284,7 +284,8 @@ with coefficients
     \begin{equation*}
         c_n = \frac{1}{T} \int_{t_0}^{t_0 + T} x\left( t \right) e^{-j 2\pi n f_0 t} \odif{t}.
     \end{equation*}
-    for \(n \in \Z\) and \(f_0 = \frac{1}{T}\).
+    for \(n \in \Z\backslash \left\{ 0 \right\}\) and \(f_0 = \frac{1}{T}\).
+    The mean term remains the same: \(c_0 = a_0\).
 \end{definition}
 To determine the complex Fourier series expansion consider the following identities:
 \begin{align*}
@@ -739,7 +740,7 @@ as described in the next section:
 \begin{align*}
     \mathscr{F}\left\{ \Lambda_T\left( t \right) \right\} & = \frac{1}{T} \mathscr{F}\left\{ \Pi_T\left( t \right) \ast \Pi_T\left( t \right) \right\}                        \\
                                                           & = \frac{1}{T} \mathscr{F}\left\{ \Pi_T\left( t \right) \right\} \mathscr{F}\left\{ \Pi_T\left( t \right) \right\} \\
-                                                          & = \frac{1}{T} T \sinc{\left( f T \right)} \times T \sinc{\left( f T \right)}                                             \\
+                                                          & = \frac{1}{T} T \sinc{\left( f T \right)} \times T \sinc{\left( f T \right)}                                      \\
                                                           & = T \sinc^2{\left( f T \right)}
 \end{align*}
 we must scale by \(1/T\) as the convolution of two rectangular functions has a maximum value of \(T\) not 1.
@@ -1096,6 +1097,91 @@ The transfer function of the RL high pass filter is:
                       & = \frac{s}{1 + s\omega_c}
 \end{align*}
 with \(\omega_c = \frac{1}{\frac{1}{R}L}\).
+\section{Sampling}
+Analogue to digital conversion is performed in two steps:
+\begin{enumerate}
+    \item Sampling
+    \item Quantisation
+\end{enumerate}
+where sampling produces a discrete-time signal.
+\subsection{Sampling Theorem}
+Given a signal \(x\left( t \right)\) with bandwidth \(f_m\),
+the sampling theorem states that the signal can be perfectly reconstructed
+from a sequence of samples if the sampling frequency \(f_s\) is at least twice the bandwidth:
+\begin{align*}
+    f_s & \geq 2f_m
+\end{align*}
+where \(f_s\) has units of samples per second. When the sampling frequency
+is exactly twice the bandwidth, the signal is sampled at the \textbf{Nyquist rate (or frequency)}.
+The Nyquist rate ensures that the signal does not \textbf{alias}, i.e., the copies of the signal in the frequency domain do not overlap.
+\subsection{Anti-Aliasing Filter}
+When the maximum frequency of the signal is greater than half the sampling frequency,
+the signal will alias. To prevent aliasing, an \textbf{anti-aliasing (low-pass) filter} is used to eliminate
+spectral overlap before sampling. While this process removes high frequency information,
+it ensures that the signal is reconstructed correctly.
+\subsection{Sampling a Signal}
+Recall the pulse function \(p\left( t \right)\) centred at \(t = 0\) with width \(T_s\):
+\begin{align*}
+    p\left( t \right)       & = \begin{cases}
+                                    \frac{1}{T_s} & -\frac{T_s}{2} < t < \frac{T_s}{2} \\
+                                    0             & \text{otherwise}
+                                \end{cases}            \\
+    p\left( t - t_0 \right) & = \begin{cases}
+                                    \frac{1}{T_s} & t_0 - \frac{T_s}{2} < t < t_0 + \frac{T_s}{2} \\
+                                    0             & \text{otherwise}
+                                \end{cases}
+\end{align*}
+When the signal \(x\left( t \right)\) is sampled at a rate \(f_s\), it can be written in terms of it's
+sampled signal values \(x\left[ n \right]\):
+\begin{equation*}
+    x_s\left( t \right) = T_s \sum_{k = -\infty}^{\infty} x\left( k T_s \right) p\left( t - kT_s \right) \rightarrow x\left[ n \right] = x_s\left( nT_s \right)
+\end{equation*}
+where the signal is sampled at times \(t = nT_s\) and \(T_s = \frac{1}{f_s}\) is the sampling period.
+\subsection{Spectra of Sampled Signals}
+Consider the Fourier series of a train of impulses centred at \(t = 0\) with period \(T_s\):
+\begin{equation*}
+    \delta_{\mathrm{train}}\left( t \right) = a_0 + \sum_{n = 1}^{\infty} a_n \cos\left( 2\pi n f_s t \right)
+\end{equation*}
+where \(a_0 = \frac{1}{T_s}\) and \(a_n = \frac{2}{T_s}\) so that,
+\begin{equation*}
+    \delta_{\mathrm{train}}\left( t \right) = \frac{1}{T_s} + \frac{2}{T_s} \sum_{n = 1}^{\infty} \cos\left( 2\pi n f_s t \right)
+\end{equation*}
+If we multiply the signal \(x\left( t \right)\) by this train of impulses, we get:
+\begin{align*}
+    x_s\left( t \right) & = x\left( t \right) \delta_{\mathrm{train}}\left( t \right)                                                                  \\
+                        & = \frac{1}{T_s} x\left( t \right) + \frac{2}{T_s} \sum_{n = 1}^{\infty} x\left( t \right) \cos\left( 2\pi n f_s t \right)    \\
+                        & = \frac{1}{T_s} \left[ x\left( t \right) + 2 \sum_{n = 1}^{\infty} x\left( t \right) \cos\left( 2\pi n f_s t \right) \right]
+\end{align*}
+Now if we take the Fourier transform of this sampled signal, we get:
+\begin{align*}
+    X_s\left( f \right) & = \frac{1}{T_s} \left[ X\left( f \right) + 2 \sum_{n = 1}^\infty \frac{1}{2}\left[ X\left( f - nf_s \right) + X\left( f + nf_s \right) \right] \right] \\
+                        & = \frac{1}{T_s} \left[ X\left( f \right) + \sum_{n = 1}^\infty \left[ X\left( f - nf_s \right) + X\left( f + nf_s \right) \right] \right]              \\
+                        & = \frac{1}{T_s} \left[ X\left( f \right) + \sum_{\substack{n = -\infty                                                                                 \\ n \neq 0}}^\infty X\left( f - nf_s \right) \right]              \\
+                        & = \frac{1}{T_s} \sum_{n = -\infty}^\infty X\left( f - nf_s \right)
+\end{align*}
+so that the spectrum of the sampled signal contains copies of the original signal at frequencies
+\(n f_s\) which can be filtered out by using a low-pass filter with gain \(T_s\) to rescale the spectra to it's original magnitude.
+\subsection{Sample and Hold}
+As an impulse train is not practical, we can use a \textbf{sample and hold} circuit where each sample
+is held constant for a duration \(T \leq T_s\). This circuit is defined:
+\begin{align*}
+    h_0\left( t \right) & = \mathrm{rect}\left( \frac{t - \frac{T}{2}}{T} \right) \\
+    H_0\left( f \right) & = e^{-j \pi f T} T \sinc{\left( T f \right)}.
+\end{align*}
+If we take the convolution of the sampled signal with \(h_0\), we can ``hold'' each sample for a duration \(T\):
+\begin{align*}
+    x_h\left( t \right) & = x_s\left( t \right) * h_0\left( t \right)                                                                   \\
+    X_h\left( f \right) & = e^{-j \pi f T} T \sinc{\left( T f \right)} \frac{1}{T_s} \sum_{n = -\infty}^\infty X\left( f - nf_s \right)
+\end{align*}
+This method still produces copies at frequencies \(n f_s\), but
+the magnitude spectra is now multiplied by the sinc function and the phase is shifted by \(T/2\) due to the exponential term.
+\subsection{Equaliser}
+To recover the original magnitude spectra of the signal, we can use the \textbf{equaliser} \(H_0^{-1}\left( f \right)\) (reciprocal of \(H_0\))
+to remove the spectral distortion caused by the sample and hold circuit:
+\begin{equation*}
+    H_0^{-1}\left( f \right) = \frac{e^{j \pi f T}}{T \sinc{\left( T f \right)}}.
+\end{equation*}
+This equaliser is applied after the additional copies have been removed by the low-pass filter.
 \section{Quantisation}
 Digital signals are discrete in both time and amplitude. A
 \textbf{quantiser} transforms each sampled value to take one of \(L\) distinct levels.
@@ -1107,7 +1193,6 @@ This procedure is non-invertible.
 \subsection{Uniform Quantisers}
 A uniform quantiser divides the \textbf{dynamic range} (\(x_\mathrm{max} - x_\mathrm{min}\)) into \(L\) equal intervals,
 known as \textbf{quantisation levels}.
-
 The step size \(\Delta\) between quantisation levels is calculated by
 \begin{equation*}
     \Delta = \frac{x_\mathrm{max} - x_\mathrm{min}}{L}
@@ -1121,5 +1206,4 @@ The number of levels \(L\) is usually a power of two,
     L = 2^n
 \end{equation*}
 where \(n\) is the number of bits to encode \(L\) levels.
-
 \end{document}
