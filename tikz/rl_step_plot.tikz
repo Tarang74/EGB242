@@ -1,0 +1,48 @@
+\documentclass[tikz]{standalone}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{gnuplottex}
+
+\pgfplotsset{compat=newest}
+
+\usetikzlibrary{arrows.meta}
+\usepgfplotslibrary{colormaps}
+
+\usepackage{unicode-math}
+\setmathfont{Latin Modern Math}
+\setmathfont{TeX Gyre Pagella Math}[range={bb,bbit}, Scale=MatchUppercase]
+
+\begin{document}
+\begin{tikzpicture}
+    \begin{axis}[
+        set layers,
+        axis line style={on layer=axis foreground},
+		xmin = 0, xmax = 3,
+		ymin = 0, ymax = 2,
+		%
+		axis equal image,
+		% axis lines = middle,
+        xtick = {0, 0.5, 1, 1.5, 2, 2.5, 3},
+		ytick = {0, 0.5, 1, 1.5, 2},
+        xticklabels = {\( \), \( \), \( \), \( \), \( \), \( \), \( \)},
+        yticklabels = {\( \), \( \), \( \), \( \), \( \), \( \), \( \)},
+        extra x tick style = {xticklabel = {\(\tau\)}},
+        extra x ticks = {1},
+        extra y tick style = {yticklabels = {\(i\left( 0^{+} \right)\), \(\displaystyle 0.632i\left( \infty \right) + i\left( 0^{+} \right)\), \(\displaystyle i\left( 0^{+} \right)\)}},
+        extra y ticks = {0, {2*(1 - e^(-1))}, 2},
+		%
+        xtickmin = 0,
+        xtickmax = 3,
+        grid = both,
+        grid style = {line width = .1pt, draw = gray!10},
+        major grid style = {line width = .2pt, draw = black!30},
+        minor tick num = 4,
+		%
+		xlabel = {\(t\)},
+		ylabel = {\(i\)}
+	]
+    \draw[smooth, samples=100, domain=0:3, blue] plot(\x, {2*(1 - e^(-1*\x))});
+    \draw[dashed, red] (1, 0) -- ++ (0, {2*(1 - e^(-1))}) -- ++ (-1, 0);
+    \end{axis}
+\end{tikzpicture}
+\end{document}

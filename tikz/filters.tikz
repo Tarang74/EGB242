@@ -1,0 +1,123 @@
+\documentclass[tikz]{standalone}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{siunitx}
+
+\pgfplotsset{compat=newest}
+
+\usetikzlibrary{arrows.meta, matrix}
+\usepgfplotslibrary{colormaps}
+\usepgfplotslibrary{groupplots}
+
+\usepackage{unicode-math}
+\setmathfont{Latin Modern Math}
+\setmathfont{TeX Gyre Pagella Math}[range={bb,bbit}, Scale=MatchUppercase]
+
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+
+\def\axisdefaultwidth{12cm}
+\def\axisdefaultheight{2cm}
+\pgfplotsset{every axis/.style={scale only axis}}
+
+\begin{document}
+\begin{tikzpicture}
+    \begin{axis}[
+        name = plot1,
+        xticklabels = \empty,
+        xtick = \empty,
+        yticklabels = {\empty, \(A\)},
+        ytick = {0, 1},
+        axis lines = center,
+        %
+        extra x tick style = {xticklabels = {\(-\omega_c\), \(\omega_c\)}},
+        extra x ticks = {-4, 4},
+        %
+        xmin = -8, xmax = 8,
+        ymin = 0, ymax = 1.5,
+        %
+        xlabel = {\(\omega\)},
+        ylabel = {\(\abs*{H\left( \omega \right)}\)}
+    ]
+        \draw[blue] (-8, 0) -| (-4, 1) -- (0, 1);
+        \draw[blue] (0, 1) -| (4, 0) -- (8, 0);
+        \node[label={180:Low pass}] at (8, 1.25) {};
+        \draw[<->,stealth-stealth,semithick] (0, 0.6) -- (4, 0.6) node[above, midway] {Bandwidth};
+    \end{axis}
+    \begin{axis}[
+        name = plot2,
+        at   = {(plot1.below south west)},
+        anchor=north west,
+        yshift=-1cm,
+        xticklabels = \empty,
+        xtick = \empty,
+        yticklabels = {\empty, \(A\)},
+        ytick = {0, 1},
+        axis lines = center,
+        %
+        extra x tick style = {xticklabels = {\(-\omega_c\), \(\omega_c\)}},
+        extra x ticks = {-4, 4},
+        %
+        xmin = -8, xmax = 8,
+        ymin = 0, ymax = 1.5,
+        %
+        xlabel = {\(\omega\)},
+        ylabel = {\(\abs*{H\left( \omega \right)}\)}
+    ]
+        \draw[blue] (-8, 1) -| (-4, 0) -- (0, 0);
+        \draw[blue] (0, 0) -| (4, 1) -- (8, 1);
+        \node[label={180:High pass}] at (8, 1.25) {};
+        \draw[<->,stealth-stealth,semithick] (0, 0.6) -- (4, 0.6) node[above, midway] {Bandwidth};
+    \end{axis}
+    \begin{axis}[
+        name = plot3,
+        at   = {(plot2.below south west)},
+        anchor=north west,
+        yshift=-1cm,
+        xticklabels = \empty,
+        xtick = \empty,
+        yticklabels = {\empty, \(A\)},
+        ytick = {0, 1},
+        axis lines = center,
+        %
+        extra x tick style = {xticklabels = {\empty, \(-\omega_0\), \empty, \empty, \(\omega_0\), \empty}},
+        extra x ticks = {-5.5, -4, -2.5, 2.5, 4, 5.5},
+        %
+        xmin = -8, xmax = 8,
+        ymin = 0, ymax = 1.5,
+        %
+        xlabel = {\(\omega\)},
+        ylabel = {\(\abs*{H\left( \omega \right)}\)}
+    ]
+        \draw[blue] (-8, 0) -| (-5.5, 1) -| (-2.5, 0) -- (0, 0);
+        \draw[blue] (0, 0) -| (2.5, 1) -| (5.5, 0) -- (8, 0);
+        \node[label={180:Band pass}] at (8, 1.25) {};
+        \draw[<->,stealth-stealth,semithick] (2.5, 0.6) -- (5.5, 0.6) node[above, midway] {Bandwidth};
+    \end{axis}
+    \begin{axis}[
+        name = plot4,
+        at   = {(plot3.below south west)},
+        anchor=north west,
+        yshift=-1cm,
+        xticklabels = \empty,
+        xtick = \empty,
+        yticklabels = {\empty, \(A\)},
+        ytick = {0, 1},
+        axis lines = center,
+        %
+        extra x tick style = {xticklabels = {\empty, \(-\omega_0\), \empty, \empty, \(\omega_0\), \empty}},
+        extra x ticks = {-5.5, -4, -2.5, 2.5, 4, 5.5},
+        %
+        xmin = -8, xmax = 8,
+        ymin = 0, ymax = 1.5,
+        %
+        xlabel = {\(\omega\)},
+        ylabel = {\(\abs*{H\left( \omega \right)}\)}
+    ]
+        \draw[blue] (-8, 1) -| (-5.5, 0) -| (-2.5, 1) -- (0, 1);
+        \draw[blue] (0, 1) -| (2.5, 0) -| (5.5, 1) -- (8, 1);
+        \node[label={180:Band stop}] at (8, 1.25) {};
+        \draw[<->,stealth-stealth,semithick] (2.5, 0.6) -- (5.5, 0.6) node[above, midway] {Bandwidth};
+    \end{axis}
+\end{tikzpicture}
+\end{document}

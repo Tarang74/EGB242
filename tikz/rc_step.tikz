@@ -1,0 +1,19 @@
+\documentclass{standalone}
+
+\usepackage{unicode-math}
+\setmathfont{Latin Modern Math}
+\setmathfont{TeX Gyre Pagella Math}[range={bb,bbit}, Scale=MatchUppercase]
+
+\usepackage{circuitikz}
+\usepackage{siunitx}
+
+\newcommand*{\equal}{=}
+
+\begin{document}
+\begin{circuitikz}[american]
+    \ctikzset{voltage=raised}
+    \ctikzset{voltage/american minus=\(\vphantom{+}-\)}
+    \draw[line cap=rect] (0, 0) to[I=\(i\left( t \right)\)] (0, 3) to[short] (3, 3) to[cspst=\(t\equal0\)] (6, 3) to[C=\(C\)] (6, 0) to[short] (0, 0);
+    \draw (3, 3) to[R=\(R\), *-*] ++ (0, -3);
+\end{circuitikz}
+\end{document}
