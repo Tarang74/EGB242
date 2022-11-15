@@ -27,6 +27,9 @@ This repository provides **lecture notes** and **exam notes** for **EGB242 - Sig
 3. Complex Fourier Series
 4. Fourier Transform
 5. Special Functions
+6. Control Systems
+7. Laplace Transform
+8. Quantisation
 
 ---
 
