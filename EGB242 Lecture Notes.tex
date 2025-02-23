@@ -54,14 +54,14 @@
     \begin{equation*}
         x\left( -t \right) = x\left( t \right)
     \end{equation*}
-    for all \(t\) in the functions domain. Even functions are symmetric about the vertical axis.
+    for all \(t\) in the function's domain. Even functions are symmetric about the vertical axis.
 \end{definition}
 \begin{definition}[Odd function]
     A function \(x\left( t \right)\) is odd if
     \begin{equation*}
         x\left( -t \right) = -x\left( t \right)
     \end{equation*}
-    for all \(t\) in the functions domain. Odd functions are symmetric about the origin.
+    for all \(t\) in the function's domain. Odd functions are symmetric about the origin.
 \end{definition}
 \subsubsection{Integrating Even and Odd Functions}
 When integrating an \textbf{even} function \(x\left( t \right)\) over
@@ -73,42 +73,43 @@ Similarly, when integrating an \textbf{odd} function \(x\left( t \right)\) over 
 \begin{equation*}
     \int_{-T}^T x\left( t \right) \odif{t} = 0.
 \end{equation*}
-\subsubsection{Product of Even and Odd Functions}
+\subsubsection{Products of Even and Odd Functions}
 \begin{enumerate}
     \item The product of an \textbf{even} function with an
           \textbf{even} function, is an \textbf{even} function.
-
-          Let \(f\left( t \right)\) and \(g\left( t \right)\) be even
-          functions, and let \(h\left( t \right) = f\left( t \right)
-          g\left( t \right)\),
-          \begin{equation*}
-              h\left( -t \right) = f\left( -t \right) g\left( -t \right) = f\left( t \right) g\left( t \right) = h\left( t \right).
-          \end{equation*}
+          \begin{proof}
+              Let \(f\left( t \right)\) and \(g\left( t \right)\) be even
+              functions, and let \(h\left( t \right) = f\left( t \right)
+              g\left( t \right)\), then,
+              \begin{equation*}
+                  h\left( -t \right) = f\left( -t \right) g\left( -t \right) = f\left( t \right) g\left( t \right) = h\left( t \right).
+              \end{equation*}
+          \end{proof}
     \item The product of an \textbf{even} function with an \textbf{odd}
           function, is an \textbf{odd} function.
-
-          Let \(f\left( t \right)\) be an even function and \(g\left( t
-          \right)\) be an odd function, and let \(h\left( t \right) =
-          f\left( t \right) g\left( t \right)\),
-          \begin{equation*}
-              h\left( -t \right) = f\left( -t \right) g\left( -t \right) = \left( -f\left( t \right) \right) g\left( t \right) = -h\left( t \right).
-          \end{equation*}
+          \begin{proof}
+              Let \(f\left( t \right)\) be an even function and \(g\left( t
+              \right)\) be an odd function, and let \(h\left( t \right) =
+              f\left( t \right) g\left( t \right)\), then,
+              \begin{equation*}
+                  h\left( -t \right) = f\left( -t \right) g\left( -t \right) = \left( -f\left( t \right) \right) g\left( t \right) = -h\left( t \right).
+              \end{equation*}
+          \end{proof}
     \item The product of an \textbf{odd} function with an \textbf{odd}
           function, is an \textbf{even} function.
-
-          Let \(f\left( t \right)\) and \(g\left( t \right)\) be odd
-          functions, and let \(h\left( t \right) = f\left( t \right)
-          g\left( t \right)\),
-          \begin{equation*}
-              h\left( -t \right) = f\left( -t \right) g\left( -t \right) = \left( -f\left( t \right) \right) \left( -g\left( t \right) \right) = f\left( t \right) g\left( t \right) = h\left( t \right).
-          \end{equation*}
+          \begin{proof}
+              Let \(f\left( t \right)\) and \(g\left( t \right)\) be odd
+              functions, and let \(h\left( t \right) = f\left( t \right)
+              g\left( t \right)\), then,
+              \begin{equation*}
+                  h\left( -t \right) = f\left( -t \right) g\left( -t \right) = \left( -f\left( t \right) \right) \left( -g\left( t \right) \right) = f\left( t \right) g\left( t \right) = h\left( t \right).
+              \end{equation*}
+          \end{proof}
 \end{enumerate}
 \subsection{Orthogonality}
 \begin{definition}[Inner product]
-    An inner product generalises the dot product in general vector spaces.
-
-    In particular, for the function space \(\mathscr{F}\left(
-    \interval{a}{b} \right)\), where \(t \in \interval{a}{b}\), the
+    An inner product generalises the dot product for general vector spaces.
+    In particular, for the function space \(\mathscr{F}\left( \interval{a}{b} \right)\), where \(t \in \interval{a}{b}\), the
     inner product is defined as the following:
     \begin{equation*}
         \abracket*{f,\: g} = \int_a^b f\left( t \right) g\left( t \right) \odif{t}
@@ -125,7 +126,7 @@ Similarly, when integrating an \textbf{odd} function \(x\left( t \right)\) over 
 Consider the inner product between the sine and cosine functions on the
 interval \(\interval{-T}{T}\).
 \begin{equation*}
-    \abracket*{\sin{\left( t \right)},\: \cos{\left( t \right)}} = \int_{-T}^T \sin{\left( t \right)} \cos{\left( t \right)} \odif{t} = 0
+    \abracket*{\sin{\left( t \right)},\: \cos{\left( t \right)}} = \int_{-T}^T \sin{\left( t \right)} \cos{\left( t \right)} \odif{t} = 0,
 \end{equation*}
 as the integrand is an odd function.
 \subsection{Integrals of Trigonometric Functions}
@@ -159,10 +160,14 @@ For \(n,\: m \in \N\),
 \begin{equation*}
     \int_{t_0}^{t_0 + T} \cos{\left( 2\pi n f_0 t \right)} \cos{\left( 2\pi m f_0 t \right)} \odif{t} = \frac{1}{2} \int_{t_0}^{t_0 + T} \cos{\left( 2 \pi \left( n - m \right) f_0 t \right)} + \cos{\left( 2 \pi \left( n + m \right) f_0 t \right)} \odif{t}
 \end{equation*}
-\(n = m \implies n - m = 0\) and \(\left( n + m \right) \in \Z\), so that the integral of the second
-term is \(0\), and the integral of the first term results in \(\frac{T}{2}\).
-
-\(n \neq m \implies \left( n - m \right),\: \left( n + m \right) \in \Z\) so that both terms evaluate to \(0\) when integrated separately.
+When:
+\begin{itemize}
+    \item \(n = m \implies n - m = 0\) and \(\left( n + m \right) \in \Z\),
+          so that the integral of the second term is \(0\), and the
+          integral of the first term results in \(\frac{T}{2}\).
+    \item \(n \neq m \implies \left( n - m \right),\: \left( n + m \right) \in \Z\)
+          so that both terms evaluate to \(0\) when integrated separately.
+\end{itemize}
 \begin{equation*}
     \int_{t_0}^{t_0 + T} \cos{\left( 2\pi n f_0 t \right)} \cos{\left( 2\pi m f_0 t \right)} \odif{t} =
     \begin{cases}
@@ -186,15 +191,19 @@ By the same argument as before,
 \begin{equation*}
     \int_{t_0}^{t_0 + T} \sin{\left( 2\pi n f_0 t \right)} \cos{\left( 2\pi m f_0 t \right)} \odif{t} = \frac{1}{2} \int_{t_0}^{t_0 + T} \sin{\left( 2 \pi \left( n - m \right) f_0 t \right)} + \sin{\left( 2 \pi \left( n + m \right) f_0 t \right)} \odif{t}
 \end{equation*}
-\(n = m \implies n - m = 0\) and \(\left( n + m \right) \in \Z\), so that the integral reduces to \(0\).
-
-\(n \neq m \implies \left( n - m \right),\: \left( n + m \right) \in \Z\) so that both terms evaluate to \(0\) when integrated separately.
+When:
+\begin{itemize}
+    \item \(n = m \implies n - m = 0\) and \(\left( n + m \right) \in \Z\),
+          so that the integral reduces to \(0\).
+    \item \(n \neq m \implies \left( n - m \right),\: \left( n + m \right) \in \Z\)
+          so that both terms evaluate to \(0\) when integrated separately.
+\end{itemize}
 \begin{equation*}
     \int_{t_0}^{t_0 + T} \sin{\left( 2\pi n f_0 t \right)} \cos{\left( 2\pi m f_0 t \right)} \odif{t} = 0.
 \end{equation*}
 \section{Fourier Series}
 \subsection{Fourier Series Expansion}
-The \textbf{Fourier Series Expansion} of a function \(x\left( t
+The \textbf{Fourier series expansion} of a function \(x\left( t
 \right)\) on the interval \(\interval{t_0}{t_0 + T}\) is given by
 \begin{equation*}
     x_F\left( t \right) = a_0 + \sum_{n = 1}^\infty \left( a_n \cos{\left( 2\pi n f_0 t \right)} + b_n \sin{\left( 2\pi n f_0 t \right)} \right)
@@ -206,9 +215,7 @@ where \(n \in \Z^{+}\) and \(f_0 = \frac{1}{T}\). The coefficients are given by
     b_n & = \frac{2}{T} \int_{t_0}^{t_0 + T} x\left( t \right) \sin{\left( 2\pi n f_0 t \right)} \odif{t}
 \end{align*}
 \begin{proof}
-    Let \(m \in \N\).
-
-    For the coefficient \(a_0\), integrate the function \(x\left( t
+    Let \(m \in \N\). For the coefficient \(a_0\), integrate the function \(x\left( t
     \right)\) over the interval \(\interval{t_0}{t_0 + T}\).
     \begin{align*}
         \int_{t_0}^{t_0 + T} x\left( t \right) \odif{t} & = \int_{t_0}^{t_0 + T} a_0 \odif{t} + \sum_{n = 1}^\infty a_n \cancelto{0}{\int_{t_0}^{t_0 + T} \cos{\left( 2 \pi n f_0 t \right)} \odif{t}} + \sum_{n = 1}^\infty b_n \cancelto{0}{\int_{t_0}^{t_0 + T} \sin{\left( 2 \pi n f_0 t \right)} \odif{t}} \\
@@ -216,47 +223,45 @@ where \(n \in \Z^{+}\) and \(f_0 = \frac{1}{T}\). The coefficients are given by
         a_0                                             & = \frac{1}{T} \int_{t_0}^{t_0 + T} x\left( t \right) \odif{t}
     \end{align*}
     so that \(a_0\) represents the average value of \(x\) on \(\interval{t_0}{t_0 + T}\). This coefficient also
-    represents the DC component of a signal.
-
-    For coefficients \(a_m\), multiply the equation by \(\cos{\left( 2
-    \pi m f_0 t \right)}\) before integrating.
+    represents the DC component of a signal. For coefficients \(a_m\),
+    multiply the equation by \(\cos{\left( 2 \pi m f_0 t \right)}\)
+    before integrating.
     \begin{align*}
         x\left( t \right) \cos{\left( 2 \pi m f_0 t \right)}                               & =
-                                                                                               \begin{aligned}[t]
-                                                                                                    & a_0 \cos{\left( 2 \pi m f_0 t \right)}                                                          \\
-                                                                                                    & + \sum_{n = 1}^\infty a_n \cos{\left( 2 \pi n f_0 t \right)} \cos{\left( 2 \pi m f_0 t \right)} \\
-                                                                                                    & + \sum_{n = 1}^\infty b_n \sin{\left( 2 \pi n f_0 t \right)} \cos{\left( 2 \pi m f_0 t \right)}
-                                                                                               \end{aligned}
+        \begin{aligned}[t]
+             & a_0 \cos{\left( 2 \pi m f_0 t \right)}                                                          \\
+             & + \sum_{n = 1}^\infty a_n \cos{\left( 2 \pi n f_0 t \right)} \cos{\left( 2 \pi m f_0 t \right)} \\
+             & + \sum_{n = 1}^\infty b_n \sin{\left( 2 \pi n f_0 t \right)} \cos{\left( 2 \pi m f_0 t \right)}
+        \end{aligned}
         \\
         \int_{t_0}^{t_0 + T} x\left( t \right) \cos{\left( 2 \pi m f_0 t \right)} \odif{t} & =
-                                                                                               \begin{aligned}[t]
-                                                                                                    & a_0 \cancelto{0}{\int_{t_0}^{t_0 + T} \cos{\left( 2 \pi m f_0 t \right)} \odif{t}}                                                          \\
-                                                                                                    & + \sum_{n = 1}^\infty a_n \int_{t_0}^{t_0 + T} \cos{\left( 2 \pi n f_0 t \right)} \cos{\left( 2 \pi m f_0 t \right)} \odif{t}               \\
-                                                                                                    & + \sum_{n = 1}^\infty b_n \cancelto{0}{\int_{t_0}^{t_0 + T} \sin{\left( 2 \pi n f_0 t \right)} \cos{\left( 2 \pi m f_0 t \right)} \odif{t}}
-                                                                                               \end{aligned}
+        \begin{aligned}[t]
+             & a_0 \cancelto{0}{\int_{t_0}^{t_0 + T} \cos{\left( 2 \pi m f_0 t \right)} \odif{t}}                                                          \\
+             & + \sum_{n = 1}^\infty a_n \int_{t_0}^{t_0 + T} \cos{\left( 2 \pi n f_0 t \right)} \cos{\left( 2 \pi m f_0 t \right)} \odif{t}               \\
+             & + \sum_{n = 1}^\infty b_n \cancelto{0}{\int_{t_0}^{t_0 + T} \sin{\left( 2 \pi n f_0 t \right)} \cos{\left( 2 \pi m f_0 t \right)} \odif{t}}
+        \end{aligned}
         \\
-        \int_{t_0}^{t_0 + T} x\left( t \right) \cos{\left( 2 \pi m f_0 t \right)} \odif{t} & = a_m \frac{T}{2}                                                                                                                                       \\
+        \int_{t_0}^{t_0 + T} x\left( t \right) \cos{\left( 2 \pi m f_0 t \right)} \odif{t} & = a_m \frac{T}{2}                                                                                \\
         a_m                                                                                & = \frac{2}{T} \int_{t_0}^{t_0 + T} x\left( t \right) \cos{\left( 2 \pi m f_0 t \right)} \odif{t}
     \end{align*}
-
     For coefficients \(b_m\), multiply the equation by \(\sin{\left( 2
     \pi m f_0 t \right)}\) before integrating.
     \begin{align*}
         x\left( t \right) \sin{\left( 2 \pi m f_0 t \right)}                               & =
-                                                                                               \begin{aligned}[t]
-                                                                                                    & a_0 \sin{\left( 2 \pi m f_0 t \right)}                                                          \\
-                                                                                                    & + \sum_{n = 1}^\infty a_n \cos{\left( 2 \pi n f_0 t \right)} \sin{\left( 2 \pi m f_0 t \right)} \\
-                                                                                                    & + \sum_{n = 1}^\infty b_n \sin{\left( 2 \pi n f_0 t \right)} \sin{\left( 2 \pi m f_0 t \right)}
-                                                                                               \end{aligned}
+        \begin{aligned}[t]
+             & a_0 \sin{\left( 2 \pi m f_0 t \right)}                                                          \\
+             & + \sum_{n = 1}^\infty a_n \cos{\left( 2 \pi n f_0 t \right)} \sin{\left( 2 \pi m f_0 t \right)} \\
+             & + \sum_{n = 1}^\infty b_n \sin{\left( 2 \pi n f_0 t \right)} \sin{\left( 2 \pi m f_0 t \right)}
+        \end{aligned}
         \\
         \int_{t_0}^{t_0 + T} x\left( t \right) \sin{\left( 2 \pi m f_0 t \right)} \odif{t} & =
-                                                                                               \begin{aligned}[t]
-                                                                                                    & a_0 \cancelto{0}{\int_{t_0}^{t_0 + T} \sin{\left( 2 \pi m f_0 t \right)} \odif{t}}                                                          \\
-                                                                                                    & + \sum_{n = 1}^\infty a_n \cancelto{0}{\int_{t_0}^{t_0 + T} \cos{\left( 2 \pi n f_0 t \right)} \sin{\left( 2 \pi m f_0 t \right)} \odif{t}} \\
-                                                                                                    & + \sum_{n = 1}^\infty b_n \int_{t_0}^{t_0 + T} \sin{\left( 2 \pi n f_0 t \right)} \sin{\left( 2 \pi m f_0 t \right)} \odif{t}
-                                                                                               \end{aligned}
+        \begin{aligned}[t]
+             & a_0 \cancelto{0}{\int_{t_0}^{t_0 + T} \sin{\left( 2 \pi m f_0 t \right)} \odif{t}}                                                          \\
+             & + \sum_{n = 1}^\infty a_n \cancelto{0}{\int_{t_0}^{t_0 + T} \cos{\left( 2 \pi n f_0 t \right)} \sin{\left( 2 \pi m f_0 t \right)} \odif{t}} \\
+             & + \sum_{n = 1}^\infty b_n \int_{t_0}^{t_0 + T} \sin{\left( 2 \pi n f_0 t \right)} \sin{\left( 2 \pi m f_0 t \right)} \odif{t}
+        \end{aligned}
         \\
-        \int_{t_0}^{t_0 + T} x\left( t \right) \sin{\left( 2 \pi m f_0 t \right)} \odif{t} & = b_m \frac{T}{2}                                                                                                                                       \\
+        \int_{t_0}^{t_0 + T} x\left( t \right) \sin{\left( 2 \pi m f_0 t \right)} \odif{t} & = b_m \frac{T}{2}                                                                                \\
         b_m                                                                                & = \frac{2}{T} \int_{t_0}^{t_0 + T} x\left( t \right) \sin{\left( 2 \pi m f_0 t \right)} \odif{t}
     \end{align*}
 \end{proof}
@@ -266,7 +271,8 @@ L}\), \(x_F\left( t \right)\) converges to
 \begin{equation*}
     x_F\left( t \right) = \lim_{\epsilon \to 0^{+}} \frac{x\left( t + \epsilon \right) + x\left( t - \epsilon \right)}{2}
 \end{equation*}
-that is, \(x = x_F\), except at discontinuities, where \(f_F\) is equal to the point halfway between the left- and right-handed limits.
+that is, \(x = x_F\), except at discontinuities, where \(f_F\) is equal
+to the point halfway between the left- and right-handed limits.
 \subsubsection{Periodicity of a Fourier Series}
 If \(x\) is non-periodic, \(x_F\) converges to the periodic extension
 of \(x\). The endpoints may converge non-uniformly, corresponding to
@@ -278,7 +284,8 @@ interval \(\interval{-\frac{T}{2}}{\frac{T}{2}}\), i.e., \(t_0 =
 \begin{equation*}
     b_n = \frac{2}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} x\left( t \right) \sin{\left( 2\pi n f_0 t \right)} \odif{t} = 0
 \end{equation*}
-and the Fourier series is a ``Fourier cosine series'', given by:
+and the expansion is called the ``cosine'' or ``even'' series expansion
+of \(x\) given by:
 \begin{equation*}
     x_c\left( t \right) = a_0 + \sum_{n = 1}^\infty a_n \cos{\left( 2\pi n f_0 t \right)}
 \end{equation*}
@@ -293,7 +300,8 @@ interval \(\interval{-\frac{T}{2}}{\frac{T}{2}}\). In this case
 \begin{equation*}
     b_n = \frac{2}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} x\left( t \right) \sin{\left( 2\pi n f_0 t \right)} \odif{t} = 0
 \end{equation*}
-and the Fourier series is a ``Fourier sine series'', given by:
+and the expansion is called the ``sine'' or ``odd'' series expansion of
+\(x\) given by:
 \begin{equation*}
     x_s\left( t \right) = \sum_{n = 1}^\infty b_n \sin{\left( 2\pi n f_0 t \right)}
 \end{equation*}
@@ -303,18 +311,22 @@ with coefficients
 \end{equation*}
 \section{Complex Fourier Series}
 \begin{definition}
-    The \textbf{Complex Fourier Series Expansion} is a concise form of the Fourier series expansion that uses complex exponentials with a single unknown coefficient.
+    The \textbf{complex Fourier series expansion} is a concise form of
+    the Fourier series expansion that uses complex exponentials with a
+    single unknown coefficient \(c_n\):
     \begin{equation*}
         x_C\left( t \right) = \sum_{n = -\infty}^\infty c_n e^{j 2\pi n f_0 t}
     \end{equation*}
     where
     \begin{equation*}
-        c_n = \frac{1}{T} \int_{t_0}^{t_0 + T} x\left( t \right) e^{-j 2\pi n f_0 t} \odif{t}.
+        c_n = \frac{1}{T} \int_{t_0}^{t_0 + T} x\left( t \right) e^{-j 2\pi n f_0 t} \odif{t}
     \end{equation*}
     for \(n \in \Z\backslash \left\{ 0 \right\}\) and \(f_0 = \frac{1}{T}\).
-    The mean term remains the same: \(c_0 = a_0\).
+    Notice that the mean term remains the same: \(c_0 = a_0\).
 \end{definition}
-To determine the complex Fourier series expansion consider the following identities:
+To determine the complex Fourier series expansion of a function,
+consider the following trigonometric properties which are derived from
+Euler's formula:
 \begin{align*}
     \cos{\left( \theta \right)} & = \frac{e^{j \theta} + e^{-j \theta}}{2}     \\
     \sin{\left( \theta \right)} & = -j \frac{e^{j \theta} - e^{-j \theta}}{2}.
@@ -324,8 +336,9 @@ By substituting these identities into the Fourier series expansion summand, we o
     a_n \cos{\left( 2\pi n f_0 t \right)} + b_n \sin{\left( 2\pi n f_0 t \right)} & = a_n \frac{e^{j 2\pi n f_0 t} + e^{-j 2\pi n f_0 t}}{2} -j b_n \frac{e^{j 2\pi n f_0 t} - e^{-j 2\pi n f_0 t}}{2} \\
                                                                                   & = \frac{a_n - j b_n}{2} e^{j 2\pi n f_0 t} + \frac{a_n + j b_n}{2} e^{-j 2\pi n f_0 t}
 \end{align*}
-Let \(c_n = \frac{a_n - j b_n}{2}\) and \(c_n^\ast = \frac{a_n + j b_n}{2}\) (we will see how this simplifies later).
-Using the definitions for \(a_n\) and \(b_n\):
+Then, let \(c_n = \frac{a_n - j b_n}{2}\) and \(c_n^\ast = \frac{a_n + j b_n}{2}\)
+(we will see how this simplifies later). Using the definitions for \(a_n\)
+and \(b_n\), the coefficients \(c_n\) and \(c_n^\ast\) simplify to:
 \begin{align*}
     c_n & = \frac{1}{2} \left( a_n - j b_n \right)                                                                                                            \\
         & = \frac{1}{T} \int_{t_0}^{t_0 + T} x\left( t \right) \left( \cos{\left( 2\pi n f_0 t \right)} -j \sin{\left( 2\pi n f_0 t \right)} \right) \odif{t} \\
@@ -337,7 +350,7 @@ Using the definitions for \(a_n\) and \(b_n\):
              & = \frac{1}{T} \int_{t_0}^{t_0 + T} x\left( t \right) e^{j 2\pi n f_0 t} \odif{t}                                                                     \\
              & = c_{-n}
 \end{align*}
-Let \(c_0 = a_0\), so that
+Finally, we let \(c_0 = a_0\), so that
 \begin{align*}
     x_C\left( t \right) & = a_0 + \sum_{n = 1}^\infty \left( a_n \cos{\left( 2\pi n f_0 t \right)} + b_n \sin{\left( 2\pi n f_0 t \right)} \right) \\
                         & = c_0 + \sum_{n = 1}^\infty \left( c_n e^{j 2\pi n f_0 t} + c_{-n} e^{-j 2\pi n f_0 t} \right)                           \\
@@ -346,9 +359,9 @@ Let \(c_0 = a_0\), so that
                         & = \sum_{n = -\infty}^\infty c_n e^{j 2\pi n f_0 t}.
 \end{align*}
 \subsection{Converting between Fourier Series Representations}
-Given the Trigonometric and Exponential (Complex) Fourier Series
-Representations (FSR), we can develop a relationship between the
-coefficients \(a_n\), \(b_n\), and \(c_n\) by:
+Given the trigonometric and exponential (complex) Fourier series
+representations, we can develop a relationship between the
+coefficients \(a_n\), \(b_n\), and \(c_n\) as follows:
 \begin{align*}
     a_0 & = c_0                           \\
     a_n & = c_n + c_{-n}                  \\
@@ -361,17 +374,16 @@ and in the reverse direction:
     c_n    & = \frac{a_n - j b_n}{2}.
 \end{align*}
 \subsection{Magnitude and Phase Spectra}
-As \(c_n\) is a complex number, consider the polar representation of
-\(c_n\):
+As \(c_n\) is a complex number, we can consider the polar representation
+of \(c_n\):
 \begin{equation*}
     c_n = \abs*{c_n} e^{j \theta_n}
 \end{equation*}
-so that the \textbf{magnitude spectra} is given by \(\abs*{c_n}\) and the \textbf{phase spectra} is given by \(\theta_n\).
-
-The plot of \(\abs*{c_n}\) against \(n\) is called the ``magnitude
-spectrum'' of \(x\left( t \right)\) and the plot of \(\theta_n\)
-against \(n\) is called the ``phase spectrum'' of \(x\left( t
-\right)\).
+and define the \textbf{magnitude spectra} as \(\abs*{c_n}\) and the
+\textbf{phase spectra} as \(\theta_n\). Here, the plot of \(\abs*{c_n}\)
+against \(n\) is called the ``magnitude spectrum'' of
+\(x\left( t \right)\) and the plot of \(\theta_n\) against \(n\) is
+called the ``phase spectrum'' of \(x\left( t \right)\).
 \begin{theorem}[Spectra of a real signal]
     Given any real function \(x\left( t \right)\), the magnitude spectrum is always an even function,
     and the phase spectrum is always an odd function.
@@ -395,7 +407,7 @@ against \(n\) is called the ``phase spectrum'' of \(x\left( t
         c_{-n} e^{-j 2\pi n f_0 t}                           & = \overline{c_n} e^{-j 2\pi n f_0 t}                             \\
         c_{-n}                                               & = \overline{c_n}
     \end{align*}
-    Therefore by representing the coefficients above in polar form we get,
+    Therefore, by representing the above coefficients in polar form, we get,
     \begin{equation*}
         \abs*{c_{-n}} e^{j \theta_{-n}} = \abs*{c_n} e^{-j \theta_n}
     \end{equation*}
@@ -413,10 +425,10 @@ so that,
     a_n & = 2 c_n                  \\
     c_n & = c_{-n} = \frac{a_n}{2}
 \end{align*}
-Hence \(c_n\) and \(c_{-n}\) are real coefficients, so that \(\theta_n = m \pi\) for some \(m \in \Z\).
-
-Given an odd function \(x\left( t \right)\), \(a_0 = 0\) and \(a_n =
-0\), therefore \(c_0 = 0\) and
+Hence \(c_n\) and \(c_{-n}\) are real coefficients, so that
+\(\theta_n = m \pi\) for some \(m \in \Z\).  Given an odd function
+\(x\left( t \right)\), \(a_0 = 0\) and \(a_n = 0\), therefore
+\(c_0 = 0\) and
 \begin{align*}
     0   & = c_n + c_{-n} \\
     c_n & = -c_{-n}
@@ -429,7 +441,8 @@ so that,
     c_n    & = -j \frac{b_n}{2}              \\
     c_{-n} & = j \frac{b_n}{2}
 \end{align*}
-Hence \(c_n\) and \(c_{-n}\) are purely imaginary coefficients, so that \(\theta_n = \left( 2m + 1 \right) \frac{\pi}{2}\) for some \(m \in \Z\).
+Hence \(c_n\) and \(c_{-n}\) are purely imaginary coefficients, so that
+\(\theta_n = \left( 2m + 1 \right) \frac{\pi}{2}\) for some \(m \in \Z\).
 \subsection{Signal Representations}
 A signal can be represented in various forms depending on the method of
 measurement. There are three main forms of signal representation:
@@ -438,10 +451,13 @@ measurement. There are three main forms of signal representation:
     \item Discrete: Discrete in time and continuous in amplitude.
     \item Digital: Discrete in time and discrete in amplitude.
 \end{itemize}
-The process of taking discrete time measurements is known as sampling, and taking discrete amplitude measurements is known as quantisation.
+The process of taking discrete time measurements is known as sampling,
+and taking discrete amplitude measurements is known as quantisation.
 \begin{definition}[Integral transform]
-    An \textit{integral transform} transforms a function through the process of integration, producing a new function of another variable.
-    Two common examples of integral transforms are the Fourier transform and the Laplace transform.
+    An \textit{integral transform} transforms a function through the
+    process of integration, producing a new function of another variable.
+    Two common examples of integral transforms are the Fourier transform
+    and the Laplace transform.
 \end{definition}
 \section{Fourier Transform}
 The Fourier Transform allows us to extend the techniques used in
@@ -473,7 +489,7 @@ If we let \(f_n = n f_0\), then \(\adif{f_n} = f_{n + 1} - f_n = \left( n + 1 \r
 \begin{equation*}
     x\left( t \right) = \sum_{n = -\infty}^\infty \left[ \int_{-\frac{T}{2}}^{\frac{T}{2}} x\left( t \right) e^{-j 2\pi f_n t} \odif{t} \right] e^{j 2\pi f_n t} \adif{f_n}.
 \end{equation*}
-By recognition, this is a Riemann sum, so that by taking the limit \(T \to \infty\) we get:
+By recognition, this is a Riemann sum, so that by taking the limit \(T \to \infty\), we find:
 \begin{equation*}
     x\left( t \right) = \int_{-\infty}^\infty \left[ \int_{-\infty}^\infty x\left( t \right) e^{-j 2\pi f t} \odif{t} \right] e^{j 2\pi f t} \odif{f}
 \end{equation*}
@@ -482,13 +498,13 @@ where
     X\left( f \right) = \int_{-\infty}^\infty x\left( t \right) e^{-j 2\pi f t} \odif{t}.
 \end{equation*}
 \begin{corollary}[Dirichlet conditions]
-    The Dirichlet conditions provide sufficient conditions for a real-valued function \(x\) to be
-    equal to its Fourier Transform \(X\), at each point where \(x\) is continuous.
-
-    The conditions are:
+    The Dirichlet conditions provide sufficient conditions for a
+    real-valued function \(x\) to be equal to its Fourier Transform
+    \(X\), at each point where \(x\) is continuous. The conditions are:
     \begin{enumerate}
         \item \(x\) has a finite number of maxima and minima over \(\interval{-L}{L}\).
-        \item \(x\) has a finite number of discontinuities, in each of which the derivative \(x'\) exists and does not change sign.
+        \item \(x\) has a finite number of discontinuities, in which the
+              derivative \(x'\) exists and does not change sign.
         \item \(\int_{-\infty}^\infty \abs*{x\left( t \right)} \odif{t}\) exists.
     \end{enumerate}
 \end{corollary}
@@ -673,20 +689,20 @@ The Dirac delta (or impulse) function is defined by the following
 characteristics:
 \begin{align*}
     \delta\left( t \right)                                & =
-                                                              \begin{cases}
-                                                                  0,      & t \neq 0 \\
-                                                                  \infty, & t = 0
-                                                              \end{cases}
+    \begin{cases}
+        0,      & t \neq 0 \\
+        \infty, & t = 0
+    \end{cases}
     \\
     \int_{-\infty}^\infty \delta\left( t \right) \odif{t} & = 1.
 \end{align*}
 Likewise, the shifted impulse function can be defined as:
 \begin{align*}
     \delta\left( t - t_0 \right)                                & =
-                                                                    \begin{cases}
-                                                                        0,      & t_0 \neq 0 \\
-                                                                        \infty, & t_0 = 0
-                                                                    \end{cases}
+    \begin{cases}
+        0,      & t_0 \neq 0 \\
+        \infty, & t_0 = 0
+    \end{cases}
     \\
     \int_{-\infty}^\infty \delta\left( t - t_0 \right) \odif{t} & = 1.
 \end{align*}
@@ -703,7 +719,7 @@ The Fourier transform of the Dirac delta function is given by
     \delta\left( t \right)       & \overset{\mathscr{F}}{\longleftrightarrow} 1                 \\
     \delta\left( t - t_0 \right) & \overset{\mathscr{F}}{\longleftrightarrow} e^{-j 2\pi f t_0}
 \end{align*}
-This result is a direct consequence from the definition of the Dirac delta function.
+This result is a direct consequence of the definition of the Dirac delta function.
 \subsection{Signum Function}
 The signum function is defined as:
 \begin{equation*}
@@ -742,7 +758,7 @@ of the unit step function using the signum function:
 \begin{equation*}
     u\left( t \right) = \frac{1}{2} \left( 1 + \sgn\left( t \right) \right).
 \end{equation*}
-Therefore the Fourier transform of the unit step function is given by:
+Therefore, the Fourier transform of the unit step function is given by:
 \begin{align*}
     \mathscr{F}\left\{ u\left( t \right) \right\} & = \mathscr{F}\left\{ \frac{1}{2} \left( 1 + \sgn\left( t \right) \right) \right\} \\
                                                   & = \frac{1}{2} \mathscr{F}\left\{ 1 \right\} + \frac{1}{2} \sgn\left( t \right)    \\
@@ -767,7 +783,8 @@ The Fourier transform of the gate function can be determined using first princip
                                                       & = T \frac{\sin{\left( \pi f T \right)}}{\pi f T}                                  \\
                                                       & = T \sinc{\left( f T \right)}
 \end{align*}
-The function \(\sinc{\left( \theta \right)} = \frac{\sin{\left( \pi \theta \right)}}{\pi \theta}\) is known as the normalised sinc function.
+The function \(\sinc{\left( \theta \right)} = \frac{\sin{\left( \pi \theta \right)}}{\pi \theta}\)
+is known as the normalised sinc function.
 \subsection{Triangular Function}
 The triangular function is defined as:
 \begin{equation*}
@@ -777,15 +794,17 @@ The triangular function is defined as:
         0                      & \text{otherwise}
     \end{cases}
 \end{equation*}
-To determine the Fourier transform of the triangular function, we will use the convolution property of the rectangular function,
-as described in the next section:
+To determine the Fourier transform of the triangular function, we will
+use the convolution property of the rectangular function, as described
+in the next section:
 \begin{align*}
     \mathscr{F}\left\{ \Lambda_T\left( t \right) \right\} & = \frac{1}{T} \mathscr{F}\left\{ \Pi_T\left( t \right) \ast \Pi_T\left( t \right) \right\}                        \\
                                                           & = \frac{1}{T} \mathscr{F}\left\{ \Pi_T\left( t \right) \right\} \mathscr{F}\left\{ \Pi_T\left( t \right) \right\} \\
                                                           & = \frac{1}{T} T \sinc{\left( f T \right)} \times T \sinc{\left( f T \right)}                                      \\
                                                           & = T \sinc^2{\left( f T \right)}
 \end{align*}
-we must scale by \(1/T\) as the convolution of two rectangular functions has a maximum value of \(T\) not 1.
+we must scale by \(1/T\) as the convolution of two rectangular functions
+has a maximum value of \(T\) not 1.
 \newpage
 \section{Control Systems}
 A control system is a system in which a given initial state will always
@@ -814,16 +833,16 @@ the following properties:
 Consider the pulse function \(p\) such that
 \begin{align*}
     p\left( t \right)       & =
-                                \begin{cases}
-                                    \frac{1}{\adif{t}} & 0 < t < \adif{t} \\
-                                    0                  & \text{otherwise}
-                                \end{cases}
+    \begin{cases}
+        \frac{1}{\adif{t}} & 0 < t < \adif{t} \\
+        0                  & \text{otherwise}
+    \end{cases}
     \\
     p\left( t - t_0 \right) & =
-                                \begin{cases}
-                                    \frac{1}{\adif{t}} & t_0 < t < t_0 + \adif{t} \\
-                                    0                  & \text{otherwise}
-                                \end{cases}
+    \begin{cases}
+        \frac{1}{\adif{t}} & t_0 < t < t_0 + \adif{t} \\
+        0                  & \text{otherwise}
+    \end{cases}
 \end{align*}
 Given a signal \(x\left( t \right)\) sampled at the rate \(1/\adif{t}\) (\unit{Hz}),
 we can approximate \(x\left( t \right)\) by:
@@ -831,7 +850,8 @@ we can approximate \(x\left( t \right)\) by:
     x\left( t \right) \approx \sum_{k = -\infty}^\infty x\left( k \adif{t} \right) p\left( t - k \adif{t} \right) \adif{t}
 \end{equation*}
 where \(t = k \adif{t}\) is the time at the start of each interval where the signal \(x\left( t \right)\) is sampled.
-If we consider the limit as \(\adif{t} \to 0\), we obtain the following:
+If we consider the limit as \(\adif{t} \to 0\), we obtain the following
+equality:
 \begin{align*}
     x\left( t \right) & = \lim_{\adif{t} \to 0} \sum_{k = -\infty}^\infty x\left( k \adif{t} \right) p\left( t - k \adif{t} \right) \adif{t} \\
                       & = \int_{-\infty}^\infty x\left( \tau \right) \delta\left( t - \tau \right) \odif{\tau}
@@ -865,23 +885,28 @@ The integral seen in the previous section is known as the
 \begin{equation*}
     y\left( t \right) = x\left( t \right) * h\left( t \right) = \int_{-\infty}^\infty x\left( \tau \right) h\left( t - \tau \right) \odif{\tau}.
 \end{equation*}
-Therefore
+Therefore,
 \begin{align*}
     \text{Input: } x\left( t \right)  & = x\left( t \right) * \delta\left( t \right) \\
     \text{Output: } y\left( t \right) & = x\left( t \right) * h\left( t \right).
 \end{align*}
-The convolution between two signals \(x\left( t \right)\) and \(y\left( t \right)\) is given by:
+It represents the influence of the impulse response \(h\left( t \right)\)
+on the input signal \(x\left( t \right)\).
+
+The convolution between two general signals \(x\left( t \right)\) and
+\(y\left( t \right)\) is given by:
 \begin{equation*}
     x\left( t \right) \ast y\left( t \right) = \int_{-\infty}^\infty x\left( \tau \right) y\left( t - \tau \right) \odif{\tau}.
 \end{equation*}
-In the frequency domain,
+In the frequency domain we can express the convolution as the product of
+the Fourier transforms of the signals:
 \begin{align*}
     \mathscr{F}{\left( x\left( t \right) \ast y\left( t \right) \right)} & = \int_{-\infty}^\infty \left[ \int_{-\infty}^\infty x\left( \tau \right) y\left( t - \tau \right) \odif{\tau} \right] e^{-j 2 \pi f t} \odif{t}  \\
                                                                          & = \int_{-\infty}^\infty \left[ \int_{-\infty}^\infty x\left( \tau \right) y\left( t - \tau \right) e^{-j 2 \pi f t} \odif{t} \right] \odif{\tau}  \\
                                                                          & = \int_{-\infty}^\infty x\left( \tau \right) \left[ \int_{-\infty}^\infty y\left( t - \tau \right) e^{-j 2 \pi f t} \odif{t} \right] \odif{\tau}.
 \end{align*}
-Let \(u = t - \tau\), so that \(\odif{u} = \odif{t}\) and the limits of integration are \(-\infty \leq u \leq \infty\).
-Then
+Let \(u = t - \tau\), so that \(\odif{u} = \odif{t}\) and the limits of
+integration are \(-\infty \leq u \leq \infty\). Then
 \begin{align*}
     \mathscr{F}\left\{ x\left( t \right) \ast y\left( t \right) \right\} & = \int_{-\infty}^\infty x\left( \tau \right) \left[ \int_{-\infty}^\infty y\left( u \right) e^{-j 2 \pi f \left( u + \tau \right)} \odif{u} \right] \odif{\tau} \\
                                                                          & = \int_{-\infty}^\infty x\left( \tau \right) e^{-j 2 \pi f \tau} \left[ \int_{-\infty}^\infty y\left( u \right) e^{-j 2 \pi f u} \odif{u} \right] \odif{\tau}   \\
@@ -902,8 +927,9 @@ if
 \begin{equation*}
     \int_{-\infty}^\infty \abs*{h\left( t \right)} \odif{t} < \infty
 \end{equation*}
-Causality means that the output at time \(t\) does not depend on future values of the input signal.
-This means that \(h\left( t \right) = 0\) for \(t < 0\).
+Causality means that the output at time \(t\) does not depend on future
+values of the input signal. This means that \(h\left( t \right) = 0\)
+for \(t < 0\).
 \subsection{Transfer Functions}
 The Fourier Transform of the impulse response is the \textbf{transfer
 function} or the frequency response of the system. At any frequency,
@@ -912,11 +938,10 @@ the ratio of the output and input:
 \begin{equation*}
     H\left( f \right) = \frac{Y\left( f \right)}{X\left( f \right)}
 \end{equation*}
-As the Fourier transform of the impulse function is uniformly equal to one, the
-impulse is the ideal signal used to find \(H\left( f \right)\).
-For sinusoidal steady state analysis, the complex transfer function of the system is the ratio of the
-output phasor to the input phasor.
-
+As the Fourier transform of the impulse function is uniformly equal to
+one, the impulse is the ideal signal used to find \(H\left( f \right)\).
+For sinusoidal steady state analysis, the complex transfer function of
+the system is the ratio of the output phasor to the input phasor.
 If the input is a current flowing between two terminals and the output
 is the voltage across the terminals, then the transfer function is the
 ratio of the output voltage to the input current, or the complex
@@ -965,7 +990,8 @@ Consider the second order parallel RLC circuit with transfer function:
 \begin{equation*}
     H\left( \omega \right) = \frac{1}{\frac{1}{R} + j \left( \omega C - \frac{1}{\omega L} \right)}
 \end{equation*}
-The \textbf{resonance frequency} is the frequency at which the transfer function is at its maximum:
+The \textbf{resonance frequency} is the frequency at which the transfer
+function is at its maximum:
 \begin{equation*}
     \omega_0 = \frac{1}{\sqrt{LC}}
 \end{equation*}
@@ -998,19 +1024,17 @@ given by:
 \end{equation*}
 where \(s = \sigma + j \omega\) is a complex variable for \(\sigma, \omega \in \R\).
 For causal systems, the lower limit of integration is zero.
-The inverse Laplace transform is given by:
+The inverse Laplace transform is given by the contour integral:
 \begin{equation*}
     f\left( t \right) = \mathscr{L}^{-1}\left\{ F\left( s \right) \right\} = \frac{1}{2\pi j} \int_{\sigma - j\infty}^{\sigma + j\infty} F\left( s \right) e^{st} \odif{s}
 \end{equation*}
-where \(\sigma\) must be inside the \textbf{text}, which is the
-set of complex numbers for which the inverse Laplace transform is defined.
-
-For a causal system, \(\sigma\) is to the right of the pole with the
-largest real part, whereas for a non-causal system it is in the
-vertical strip between two poles.
-
-Note that we typically use tables and partial fraction decomposition to
-find the inverse Laplace transform.
+where we define a contour along the vertical line \(\Re\left( s \right) = \sigma\)
+in the complex plane such that \(\sigma\) is greater than all poles
+of \(F\left( s \right)\). For a causal system, \(\sigma\) is to the
+right of the pole with the largest real part, whereas for a non-causal
+system it is in the vertical strip between two poles. Note that we can
+typically use tables and partial fraction decomposition to find the
+inverse Laplace transform of real-valued functions.
 \subsection{Conditions for Existence}
 The Laplace transform converges when
 \begin{equation*}
@@ -1022,7 +1046,7 @@ for finite \(\sigma\). Or equivalently when,
 \end{equation*}
 \subsection{Laplace Transform Properties}
 Like the Fourier transform, many properties of the Laplace transform
-can be derived from the definition. Notably, the Laplace transform is
+can be derived from its definition. Notably, the Laplace transform is
 linear and also satisfies the convolution theorem.
 \subsection{Zeros and Poles}
 The zeros and poles of a function \(f\left( t \right)\) are the roots
@@ -1056,9 +1080,9 @@ with \(\tau = \frac{1}{R}L\).
     \includegraphics[height = 4cm]{figures/rl_natural_plot.pdf}
     \caption{Natural response of RL circuit.} % \label{}
 \end{figure}
-\(\tau\) is the time constant that describes the time taken for the response to decay to \(1/e\) of its initial value.
-
-For the step responses, consider the following circuits:
+\(\tau\) is the time constant that describes the time taken for the
+response to decay to \(1/e\) of its initial value. For the step
+responses, consider the following circuits:
 \begin{figure}[H]
     \centering
     \includegraphics[height = 4cm]{figures/rc_step.pdf}
@@ -1084,10 +1108,12 @@ For an RL circuit:
     \includegraphics[height = 4cm]{figures/rl_step_plot.pdf}
     \caption{Step response of an RL circuit.} % \label{}
 \end{figure}
-where \(v\left( \infty \right)\) and \(i\left( \infty \right)\) are the steady-state values of the voltage and current respectively.
-To determine the initial and steady-state values of the voltage and current, we can use the Laplace transform.
+where \(v\left( \infty \right)\) and \(i\left( \infty \right)\) are the
+steady-state values of the voltage and current respectively. To
+determine the initial and steady-state values of the voltage and
+current, we can use the Laplace transform.
 \subsection{Initial and Final Value Theorems}
-If the poles of \(F\left( s \right)\) are in the left hand side of the
+If the poles of \(F\left( s \right)\) are in the left-hand side of the
 \(s\)-plane, the system is \textbf{stable}. Given a stable system,
 \begin{align*}
     f\left( 0^{+} \right)  & = \lim_{s \to \infty} s F\left( s \right) \\
@@ -1105,13 +1131,15 @@ taking the Laplace transform gives:
     I\left( s \right) & = sC V\left( s \right) \\
     V\left( s \right) & = sL I\left( s \right)
 \end{align*}
-where we assume that the initial conditions are zero. This gives us an \(s\)-domain definition of impedance for reactive elements:
+where we assume that the initial conditions are zero. This gives us an
+\(s\)-domain definition of impedance for reactive elements:
 \begin{align*}
     Z_C & = \frac{1}{sC} \\
     Z_L & = sL
 \end{align*}
 These definitions allow us to analyse circuits by first applying
-the Laplace transform to all elements and solving the circuit via Kirchhoff's laws either through mesh or nodal analysis.
+the Laplace transform to all elements and solving the circuit via
+Kirchhoff's laws either through mesh or nodal analysis.
 \subsection{Common Filters}
 Using the above definitions, we can derive the transfer functions of
 common RC/RL filters. Here \(\omega_c = 1/\tau\) is the cut-off
@@ -1185,7 +1213,8 @@ least twice the bandwidth:
 \end{align*}
 where \(f_s\) has units of samples per second. When the sampling frequency
 is exactly twice the bandwidth, the signal is sampled at the \textbf{Nyquist rate (or frequency)}.
-The Nyquist rate ensures that the signal does not \textbf{alias}, i.e., the copies of the signal in the frequency domain do not overlap.
+The Nyquist rate ensures that the signal does not \textbf{alias}, i.e.,
+the copies of the signal in the frequency domain do not overlap.
 \subsection{Anti-Aliasing Filter}
 When the maximum frequency of the signal is greater than half the
 sampling frequency, the signal will alias. To prevent aliasing, an
@@ -1197,19 +1226,19 @@ Recall the pulse function \(p\left( t \right)\) centred at \(t = 0\)
 with width \(T_s\):
 \begin{align*}
     p\left( t \right)       & =
-                                \begin{cases}
-                                    \frac{1}{T_s} & -\frac{T_s}{2} < t < \frac{T_s}{2} \\
-                                    0             & \text{otherwise}
-                                \end{cases}
+    \begin{cases}
+        \frac{1}{T_s} & -\frac{T_s}{2} < t < \frac{T_s}{2} \\
+        0             & \text{otherwise}
+    \end{cases}
     \\
     p\left( t - t_0 \right) & =
-                                \begin{cases}
-                                    \frac{1}{T_s} & t_0 - \frac{T_s}{2} < t < t_0 + \frac{T_s}{2} \\
-                                    0             & \text{otherwise}
-                                \end{cases}
+    \begin{cases}
+        \frac{1}{T_s} & t_0 - \frac{T_s}{2} < t < t_0 + \frac{T_s}{2} \\
+        0             & \text{otherwise}
+    \end{cases}
 \end{align*}
-When the signal \(x\left( t \right)\) is sampled at a rate \(f_s\), it can be written in terms of it's
-sampled signal values \(x\left[ n \right]\):
+When the signal \(x\left( t \right)\) is sampled at a rate \(f_s\), it
+can be written in terms of it's sampled signal values \(x\left[ n \right]\):
 \begin{equation*}
     x_s\left( t \right) = T_s \sum_{k = -\infty}^{\infty} x\left( k T_s \right) p\left( t - kT_s \right) \rightarrow x\left[ n \right] = x_s\left( nT_s \right)
 \end{equation*}
@@ -1237,8 +1266,10 @@ Now if we take the Fourier transform of this sampled signal, we get:
                         & = \frac{1}{T_s} \left[ X\left( f \right) + \sum_{\substack{n = -\infty                                                                                 \\ n \neq 0}}^\infty X\left( f - nf_s \right) \right]              \\
                         & = \frac{1}{T_s} \sum_{n = -\infty}^\infty X\left( f - nf_s \right)
 \end{align*}
-so that the spectrum of the sampled signal contains copies of the original signal at frequencies
-\(n f_s\) which can be filtered out by using a low-pass filter with gain \(T_s\) to rescale the spectra to it's original magnitude.
+so that the spectrum of the sampled signal contains copies of the
+original signal at frequencies \(n f_s\) which can be filtered out by
+using a low-pass filter with gain \(T_s\) to rescale the spectra to its
+original magnitude.
 \subsection{Sample and Hold}
 As an impulse train is not practical, we can use a \textbf{sample and
 hold} circuit where each sample is held constant for a duration \(T
@@ -1247,13 +1278,15 @@ hold} circuit where each sample is held constant for a duration \(T
     h_0\left( t \right) & = \mathrm{rect}\left( \frac{t - \frac{T}{2}}{T} \right) \\
     H_0\left( f \right) & = e^{-j \pi f T} T \sinc{\left( T f \right)}.
 \end{align*}
-If we take the convolution of the sampled signal with \(h_0\), we can ``hold'' each sample for a duration \(T\):
+If we take the convolution of the sampled signal with \(h_0\), we can
+``hold'' each sample for a duration \(T\):
 \begin{align*}
     x_h\left( t \right) & = x_s\left( t \right) * h_0\left( t \right)                                                                   \\
     X_h\left( f \right) & = e^{-j \pi f T} T \sinc{\left( T f \right)} \frac{1}{T_s} \sum_{n = -\infty}^\infty X\left( f - nf_s \right)
 \end{align*}
-This method still produces copies at frequencies \(n f_s\), but
-the magnitude spectra is now multiplied by the sinc function and the phase is shifted by \(T/2\) due to the exponential term.
+This method still produces copies at frequencies \(n f_s\), but the
+magnitude spectra is now multiplied by the sinc function and the phase
+is shifted by \(T/2\) due to the exponential term.
 \subsection{Equaliser}
 To recover the original magnitude spectra of the signal, we can use the
 \textbf{equaliser} \(H_0^{-1}\left( f \right)\) (reciprocal of \(H_0\))
@@ -1269,7 +1302,7 @@ Digital signals are discrete in both time and amplitude. A
 distinct levels. The \(L\) levels are allocated over the entire dynamic
 range of the analog signal
 \begin{equation*}
-    x_\mathrm{min} \leq x\left( t \right) \leq x_\mathrm{max}
+    x_\mathrm{min} \leq x\left( t \right) \leq x_\mathrm{max}.
 \end{equation*}
 This procedure is non-invertible.
 \subsection{Uniform Quantisers}
